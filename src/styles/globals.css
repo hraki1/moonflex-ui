@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #141414;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* styles/globals.css */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.play-arrow {
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 15px solid rgb(255, 255, 255);
+}
+.film-info {
+  transition: 0.3s;
+  transform: translateY(100%);
+}
+
+@media (width <= 40rem /* 640px */) {
+  .film-info {
+    transform: translateY(0);
+  }
+}
+
+.film:hover .film-info {
+  transform: translateY(0);
+}
+.play-button {
+  opacity: 0;
+}
+
+.film:hover .play-button {
+  opacity: 1;
+}
