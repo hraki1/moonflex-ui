@@ -24,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${neuton.className} antialiased select-none`}>
+      <body className={`${neuton.className} antialiased select-none duration-300`}>
         <Navigation />
         <main>{children}</main>
         <NetflixFooter />
