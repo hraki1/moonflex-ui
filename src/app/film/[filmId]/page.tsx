@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import Image from "next/image";
 import { use, useEffect, useState } from "react";
@@ -70,32 +70,74 @@ export default function FilmDetails({
   return (
     <>
       <Modal open={modalisOpen} onClose={toggleOpenModal}>
-        <div>
-          {trailerKey && (
-            <ReactPlayer
-              url={`https://www.youtube.com/watch?v=${trailerKey}`}
-              config={{
-                youtube: {
-                  playerVars: {
-                    origin: window.location.origin,
-                    host: "https://www.youtube-nocookie.com", // Privacy-enhanced domain
-                    modestbranding: 1, // Hides YouTube logo
-                    rel: 0, // Disables related videos at the end
-                  },
-                },
-              }}
-            />
-          )}
-        </div>
-        <div className="p-4 text-white">
-          <h2 className="text-xl font-bold mb-4">Modal Title</h2>
-          <p>This is your modal content. You can put anything here.</p>
-          <button
-            className=" text-white bg-gray-500 rounded-2xl px-3 py-2 mt-5"
-            onClick={toggleOpenModal}
-          >
-            Close
-          </button>
+        <div className="relative w-full max-w-4xl mx-4 bg-gray-900 rounded-lg overflow-hidden shadow-2xl">
+          {/* Video Player Container */}
+          <div className="relative pt-[56.25%]">
+            {" "}
+            {/* 16:9 Aspect Ratio */}
+            {trailerKey && (
+              <div className="absolute inset-0">
+                <ReactPlayer
+                  url={`https://www.youtube.com/watch?v=${trailerKey}`}
+                  width="100%"
+                  height="100%"
+                  playing={true} // Auto-play when opened
+                  controls={true} // Show player controls
+                  config={{
+                    youtube: {
+                      playerVars: {
+                        origin: window.location.origin,
+                        host: "https://www.youtube-nocookie.com",
+                        modestbranding: 1,
+                        rel: 0,
+                        showinfo: 0, // Hides video title and uploader
+                        fs: 1, // Allows fullscreen
+                        autoplay: 1, // Auto-play when opened
+                      },
+                    },
+                  }}
+                />
+              </div>
+            )}
+          </div>
+
+          {/* Content Area */}
+          <div className="p-6 text-white">
+            <div className="flex justify-between items-start mb-4">
+              <h2 className="text-2xl font-bold">Movie Trailer</h2>
+              <button
+                onClick={toggleOpenModal}
+                className="text-gray-300 hover:text-white focus:outline-none"
+                aria-label="Close modal"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <p className="text-gray-300 mb-6">
+              Watch the official trailer for this movie.
+            </p>
+
+            <button
+              onClick={toggleOpenModal}
+              className="px-6 py-2 bg-red-600 hover:bg-red-700 rounded-lg font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
+            >
+              Close Trailer
+            </button>
+          </div>
         </div>
       </Modal>
       <div className="text-white">
