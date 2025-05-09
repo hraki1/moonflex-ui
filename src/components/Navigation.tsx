@@ -30,7 +30,7 @@ export default function Navigation() {
         <div className="flex items-center space-x-4">
           {/* Netflix Logo */}
           <Link href="/" className="text-red-600 font-bold text-3xl">
-            NETFLIX
+            MoonFlex
           </Link>
 
           {/* Desktop Navigation */}
@@ -115,11 +115,14 @@ export default function Navigation() {
 
           {/* Profile */}
           <div className="relative">
-            <button className="flex items-center space-x-1">
-              <div className="w-8 h-8 rounded bg-red-600 flex items-center justify-center text-white">
-                <span className="text-sm font-medium">U</span>
+            <Link
+              href={"/auth"}
+              className=" cursor-pointer flex items-center space-x-1"
+            >
+              <div className="px-3 py-1 rounded bg-red-600 flex items-center justify-center text-white mr-5">
+                <span className="text-lg font-medium">Login</span>
               </div>
-              <svg
+              {/* <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-4 w-4 text-white hidden md:block"
                 viewBox="0 0 20 20"
@@ -130,8 +133,8 @@ export default function Navigation() {
                   d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
                   clipRule="evenodd"
                 />
-              </svg>
-            </button>
+              </svg> */}
+            </Link>
           </div>
         </div>
       </div>

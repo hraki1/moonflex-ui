@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Ahmad%20Alhraki/Desktop/moonflex/src/app/film/layout.tsx"],"sourcesContent":["import React from \"react\";\r\n\r\nexport default function filmLayout({\r\n  children,\r\n}: {\r\n  children: React.ReactNode;\r\n}) {\r\n  return <>{children}</>;\r\n}\r\n"],"names":[],"mappings":";;;;;AAEe,SAAS,WAAW,EACjC,QAAQ,EAGT;IACC,qBAAO;kBAAG;;AACZ","debugId":null}}]
+}

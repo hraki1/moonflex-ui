@@ -33,14 +33,12 @@ export default function Home() {
   let array_two: Film[] = [];
   let array_three: Film[] = [];
   let array_four: Film[] = [];
-  let array_five: Film[] = [];
 
   if (movies) {
     array_one = movies.slice(0, 5);
     array_two = movies.slice(5, 10);
     array_three = movies.slice(10, 15);
     array_four = movies.slice(15, 20);
-    array_five = movies.slice(20, 25);
   }
 
   return (
@@ -57,9 +55,7 @@ export default function Home() {
         <div className="mt-24">
           <FilmList title="Hard" films={array_four} />
         </div>
-        <div className="mt-24">
-          <FilmList title="hot" films={array_five} />
-        </div>
+       
       </div>
     </>
   );

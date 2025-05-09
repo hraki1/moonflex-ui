@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+.input {
+  @apply w-full rounded bg-[#333] px-5 py-3 placeholder-[gray] outline-none focus:bg-[#454545];
+}
+.input:focus {
+  @apply bg-[#454545] border-b-2 border-[#e50914];
+}
 html {
   scroll-behavior: smooth;
 }
