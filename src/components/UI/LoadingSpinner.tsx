@@ -1,62 +1,64 @@
 // components/LoadingSpinner.tsx
-import { motion } from "framer-motion";
+import React from "react";
 
-const LoadingSpinner = () => {
-  const barVariants = {
-    initial: { scaleY: 0.1 },
-    animate: { 
-      scaleY: [0.1, 1, 0.1],
-      transition: { 
-        duration: 1.5,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  };
+interface LoadingSpinnerProps {
+  text?: string;
+  size?: "sm" | "md" | "lg";
+  className?: string;
+}
 
-  const containerVariants = {
-    initial: {},
-    animate: { 
-      transition: { 
-        staggerChildren: 0.1
-      }
-    }
+const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
+  text = "Loading",
+  size = "md",
+  className = "",
+}) => {
+  const sizeMap = {
+    sm: {
+      container: "h-8 w-8",
+      border: "border-3",
+    },
+    md: {
+      container: "h-12 w-12",
+      border: "border-4",
+    },
+    lg: {
+      container: "h-16 w-16",
+      border: "border-6",
+    },
   };
 
   return (
-    <div className="fixed inset-0 bg-black flex flex-col items-center justify-center z-50">
-      {/* Netflix N Logo */}
-      <div className="relative w-24 h-24 mb-5">
-        <span className="absolute text-7xl font-extrabold text-netflix-red font-sans z-10">
-          N
-        </span>
-        
-        {/* Animated Bars */}
-        <motion.div 
-          className="absolute w-full h-full flex items-center justify-center"
-          variants={containerVariants}
-          initial="initial"
-          animate="animate"
-        >
-          {[0, 1, 2].map((i) => (
-            <motion.div
-              key={i}
-              className="w-3 h-20 bg-netflix-red mx-1 origin-bottom"
-              variants={barVariants}
-            />
-          ))}
-        </motion.div>
+    <div
+      className={`flex flex-col items-center justify-center gap-3 ${className}`}
+    >
+      {/* Main spinner */}
+      <div className="relative">
+        {/* Outer ring with glow effect */}
+        <div
+          className={`${sizeMap[size].container} ${sizeMap[size].border} border-gray-800 rounded-full animate-spin`}
+          style={{
+            animationDuration: "1.5s",
+            borderTopColor: "#e50914",
+            boxShadow: "0 0 0 0 rgba(229, 9, 20, 0.7)",
+          }}
+        ></div>
+
+        {/* Inner glow effect */}
+        <div
+          className={`absolute inset-0 ${sizeMap[size].border} border-transparent rounded-full animate-spin`}
+          style={{
+            animationDuration: "2s",
+            borderTopColor: "#e50914",
+            filter: "blur(2px)",
+            opacity: 0.7,
+          }}
+        ></div>
       </div>
 
-      {/* Loading Text */}
-      <motion.p 
-        className="text-white font-sans text-lg tracking-wider mt-5"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ repeat: Infinity, repeatType: "reverse", duration: 1.5 }}
-      >
-        Loading...
-      </motion.p>
+      {/* Loading text */}
+      <p className="text-red-500 font-sans font-medium text-sm uppercase tracking-wider animate-pulse">
+        {text}
+      </p>
     </div>
   );
 };
