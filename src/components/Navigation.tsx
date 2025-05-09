@@ -119,7 +119,7 @@ export default function Navigation() {
               href={"/auth"}
               className=" cursor-pointer flex items-center space-x-1"
             >
-              <div className="px-3 py-1 rounded bg-red-600 flex items-center justify-center text-white mr-5">
+              <div className="px-3 py-1 rounded bg-red-600 flex items-center justify-center text-white md:mr-5">
                 <span className="text-lg font-medium">Login</span>
               </div>
               {/* <svg
