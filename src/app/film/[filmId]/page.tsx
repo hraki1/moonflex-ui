@@ -7,6 +7,7 @@ import { Star, Clock, CalendarDays, Play, Plus } from "lucide-react";
 import Modal from "@/components/UI/Modal";
 import ReactPlayer from "react-player";
 import Film from "@/models/Film";
+import LoadingSpinner from "@/components/UI/LoadingSpinner";
 
 export default function FilmDetails({
   params,
@@ -64,16 +65,15 @@ export default function FilmDetails({
   };
 
   if (!movie) {
-    return <p>loading...</p>;
+    return <LoadingSpinner />;
   }
 
   return (
     <>
       <Modal open={modalisOpen} onClose={toggleOpenModal}>
-        <div className="relative w-full max-w-4xl mx-4 bg-gray-900 rounded-lg overflow-hidden shadow-2xl">
+        <div className="relative w-full bg-gray-900 rounded-lg overflow-hidden shadow-2xl">
           {/* Video Player Container */}
           <div className="relative pt-[56.25%]">
-            {" "}
             {/* 16:9 Aspect Ratio */}
             {trailerKey && (
               <div className="absolute inset-0">
@@ -105,26 +105,6 @@ export default function FilmDetails({
           <div className="p-6 text-white">
             <div className="flex justify-between items-start mb-4">
               <h2 className="text-2xl font-bold">Movie Trailer</h2>
-              <button
-                onClick={toggleOpenModal}
-                className="text-gray-300 hover:text-white focus:outline-none"
-                aria-label="Close modal"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
             </div>
 
             <p className="text-gray-300 mb-6">
