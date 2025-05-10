@@ -85,18 +85,22 @@ export default function FilmDetails({
                   url={`https://www.youtube.com/watch?v=${trailerKey}`}
                   width="100%"
                   height="100%"
-                  playing={true} // Auto-play when opened
-                  controls={true} // Show player controls
+                  playing={true}
+                  controls={true}
+                  light={`https://img.youtube.com/vi/${trailerKey}/hqdefault.jpg`} // صورة قبل التشغيل
                   config={{
                     youtube: {
                       playerVars: {
-                        origin: window.location.origin,
+                        origin:
+                          typeof window !== "undefined"
+                            ? window.location.origin
+                            : "",
                         host: "https://www.youtube-nocookie.com",
                         modestbranding: 1,
                         rel: 0,
-                        showinfo: 0, // Hides video title and uploader
-                        fs: 1, // Allows fullscreen
-                        autoplay: 1, // Auto-play when opened
+                        showinfo: 0,
+                        fs: 1,
+                        autoplay: 1,
                       },
                     },
                   }}
