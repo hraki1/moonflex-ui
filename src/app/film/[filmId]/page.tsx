@@ -128,7 +128,7 @@ export default function FilmDetails({
         {/* Backdrop with overlay - reduced height on mobile */}
         <div className="relative h-[40vh] sm:h-[50vh] md:h-[70vh] min-h-[300px] w-full overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent z-10" />
-          <div className="relative w-full h-[300px]">
+          <div className="relative w-full md:h-[600px] h-[300px]">
             {" "}
             {/* adjust height as needed */}
             <Image
@@ -141,8 +141,6 @@ export default function FilmDetails({
               fill
               className="object-cover"
               priority
-              placeholder="blur"
-              blurDataURL="/gif/spinner.gif"
             />
           </div>
 
@@ -171,6 +169,8 @@ export default function FilmDetails({
                   height={450}
                   className="w-full h-auto object-cover"
                   priority
+                  placeholder="blur"
+                  blurDataURL="/gif/spinner.gif"
                 />
               </div>
             </div>

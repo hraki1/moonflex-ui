@@ -1894,6 +1894,12 @@
   }
 
   @media (width >= 48rem) {
+    .md\:h-\[600px\] {
+      height: 600px;
+    }
+  }
+
+  @media (width >= 48rem) {
     .md\:w-1\/2 {
       width: 50%;
     }

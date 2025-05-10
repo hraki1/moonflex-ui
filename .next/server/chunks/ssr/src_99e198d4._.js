@@ -455,7 +455,7 @@ function FilmDetails({ params }) {
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "relative w-full h-[300px]",
+                                className: "relative w-full md:h-[600px] h-[300px]",
                                 children: [
                                     " ",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -463,9 +463,7 @@ function FilmDetails({ params }) {
                                         alt: filmData.title,
                                         fill: true,
                                         className: "object-cover",
-                                        priority: true,
-                                        placeholder: "blur",
-                                        blurDataURL: "/gif/spinner.gif"
+                                        priority: true
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/film/[filmId]/page.tsx",
                                         lineNumber: 134,
@@ -489,18 +487,18 @@ function FilmDetails({ params }) {
                                             children: movie.release_date
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                            lineNumber: 152,
+                                            lineNumber: 150,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                    lineNumber: 150,
+                                    lineNumber: 148,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                lineNumber: 149,
+                                lineNumber: 147,
                                 columnNumber: 11
                             }, this)
                         ]
@@ -524,20 +522,22 @@ function FilmDetails({ params }) {
                                             width: 300,
                                             height: 450,
                                             className: "w-full h-auto object-cover",
-                                            priority: true
+                                            priority: true,
+                                            placeholder: "blur",
+                                            blurDataURL: "/gif/spinner.gif"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                            lineNumber: 163,
+                                            lineNumber: 161,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                        lineNumber: 162,
+                                        lineNumber: 160,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                    lineNumber: 161,
+                                    lineNumber: 159,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -766,12 +766,12 @@ function FilmDetails({ params }) {
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                            lineNumber: 159,
+                            lineNumber: 157,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                        lineNumber: 158,
+                        lineNumber: 156,
                         columnNumber: 9
                     }, this)
                 ]
