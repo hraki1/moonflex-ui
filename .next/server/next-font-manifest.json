@@ -1,5 +1,8 @@
 {
   "app": {
+    "[project]/src/app/_not-found/page": [
+      "static/media/kJEnBuEW6A0lliaV_m88ja5Twtx8BWhtkDVmjZvM_oTZA81dNA6MzbxG-s.p.2d31ea24.woff2"
+    ],
     "[project]/src/app/film/[filmId]/page": [
       "static/media/kJEnBuEW6A0lliaV_m88ja5Twtx8BWhtkDVmjZvM_oTZA81dNA6MzbxG-s.p.2d31ea24.woff2"
     ],

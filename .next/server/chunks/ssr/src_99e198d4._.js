@@ -454,13 +454,25 @@ function FilmDetails({ params }) {
                                 lineNumber: 130,
                                 columnNumber: 11
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                src: movie.backdrop_path ? `https://image.tmdb.org/t/p/w500${movie.backdrop_path}` : "https://via.placeholder.com/500x750?text=No+Poster",
-                                alt: filmData.title,
-                                fill: true,
-                                className: "object-cover",
-                                priority: true
-                            }, void 0, false, {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "relative w-full h-[300px]",
+                                children: [
+                                    " ",
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                        src: movie.backdrop_path ? `https://image.tmdb.org/t/p/w500${movie.backdrop_path}` : "https://via.placeholder.com/500x750?text=No+Poster",
+                                        alt: filmData.title,
+                                        fill: true,
+                                        className: "object-cover",
+                                        priority: true,
+                                        placeholder: "blur",
+                                        blurDataURL: "/gif/spinner.gif"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/film/[filmId]/page.tsx",
+                                        lineNumber: 134,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/src/app/film/[filmId]/page.tsx",
                                 lineNumber: 131,
                                 columnNumber: 11
@@ -477,18 +489,18 @@ function FilmDetails({ params }) {
                                             children: movie.release_date
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                            lineNumber: 145,
+                                            lineNumber: 152,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                    lineNumber: 143,
+                                    lineNumber: 150,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                lineNumber: 142,
+                                lineNumber: 149,
                                 columnNumber: 11
                             }, this)
                         ]
@@ -515,17 +527,17 @@ function FilmDetails({ params }) {
                                             priority: true
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                            lineNumber: 156,
+                                            lineNumber: 163,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                        lineNumber: 155,
+                                        lineNumber: 162,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                    lineNumber: 154,
+                                    lineNumber: 161,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -541,7 +553,7 @@ function FilmDetails({ params }) {
                                                             className: "text-yellow-400 w-5 h-5 fill-current"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                                            lineNumber: 176,
+                                                            lineNumber: 183,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -552,13 +564,13 @@ function FilmDetails({ params }) {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                                            lineNumber: 177,
+                                                            lineNumber: 184,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                                    lineNumber: 175,
+                                                    lineNumber: 182,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -568,20 +580,20 @@ function FilmDetails({ params }) {
                                                             className: "w-4 h-4"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                                            lineNumber: 182,
+                                                            lineNumber: 189,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: filmData.duration
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                                            lineNumber: 183,
+                                                            lineNumber: 190,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                                    lineNumber: 181,
+                                                    lineNumber: 188,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -591,26 +603,26 @@ function FilmDetails({ params }) {
                                                             className: "w-4 h-4"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                                            lineNumber: 186,
+                                                            lineNumber: 193,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                             children: filmData.year
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                                            lineNumber: 187,
+                                                            lineNumber: 194,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                                    lineNumber: 185,
+                                                    lineNumber: 192,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                            lineNumber: 174,
+                                            lineNumber: 181,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -620,12 +632,12 @@ function FilmDetails({ params }) {
                                                     children: genre
                                                 }, index, false, {
                                                     fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                                    lineNumber: 194,
+                                                    lineNumber: 201,
                                                     columnNumber: 19
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                            lineNumber: 192,
+                                            lineNumber: 199,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -639,14 +651,14 @@ function FilmDetails({ params }) {
                                                             className: "w-4 h-4 sm:w-5 sm:h-5"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                                            lineNumber: 209,
+                                                            lineNumber: 216,
                                                             columnNumber: 19
                                                         }, this),
                                                         " Watch Trailer"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                                    lineNumber: 205,
+                                                    lineNumber: 212,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -656,20 +668,20 @@ function FilmDetails({ params }) {
                                                             className: "w-4 h-4 sm:w-5 sm:h-5"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                                            lineNumber: 212,
+                                                            lineNumber: 219,
                                                             columnNumber: 19
                                                         }, this),
                                                         " My List"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                                    lineNumber: 211,
+                                                    lineNumber: 218,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                            lineNumber: 204,
+                                            lineNumber: 211,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -677,7 +689,7 @@ function FilmDetails({ params }) {
                                             children: movie.overview
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                            lineNumber: 217,
+                                            lineNumber: 224,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -691,20 +703,20 @@ function FilmDetails({ params }) {
                                                             children: "Director"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                                            lineNumber: 224,
+                                                            lineNumber: 231,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                             children: filmData.director
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                                            lineNumber: 227,
+                                                            lineNumber: 234,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                                    lineNumber: 223,
+                                                    lineNumber: 230,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -715,7 +727,7 @@ function FilmDetails({ params }) {
                                                             children: "Cast"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                                            lineNumber: 230,
+                                                            lineNumber: 237,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -725,41 +737,41 @@ function FilmDetails({ params }) {
                                                                     children: actor
                                                                 }, index, false, {
                                                                     fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                                                    lineNumber: 235,
+                                                                    lineNumber: 242,
                                                                     columnNumber: 23
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                                            lineNumber: 233,
+                                                            lineNumber: 240,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                                    lineNumber: 229,
+                                                    lineNumber: 236,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                            lineNumber: 222,
+                                            lineNumber: 229,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                                    lineNumber: 172,
+                                    lineNumber: 179,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                            lineNumber: 152,
+                            lineNumber: 159,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/film/[filmId]/page.tsx",
-                        lineNumber: 151,
+                        lineNumber: 158,
                         columnNumber: 9
                     }, this)
                 ]

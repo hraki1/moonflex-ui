@@ -128,17 +128,24 @@ export default function FilmDetails({
         {/* Backdrop with overlay - reduced height on mobile */}
         <div className="relative h-[40vh] sm:h-[50vh] md:h-[70vh] min-h-[300px] w-full overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent z-10" />
-          <Image
-            src={
-              movie.backdrop_path
-                ? `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`
-                : "https://via.placeholder.com/500x750?text=No+Poster"
-            }
-            alt={filmData.title}
-            fill
-            className="object-cover"
-            priority
-          />
+          <div className="relative w-full h-[300px]">
+            {" "}
+            {/* adjust height as needed */}
+            <Image
+              src={
+                movie.backdrop_path
+                  ? `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`
+                  : "https://via.placeholder.com/500x750?text=No+Poster"
+              }
+              alt={filmData.title}
+              fill
+              className="object-cover"
+              priority
+              placeholder="blur"
+              blurDataURL="/gif/spinner.gif"
+            />
+          </div>
+
           <div className="container mx-auto relative z-20 h-full flex items-end pb-8 sm:pb-12 md:pb-16 px-4 -mt-28 md:-mt-20 md:px-40">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold drop-shadow-2xl text-center md:text-left w-full">
               {movie.title}{" "}

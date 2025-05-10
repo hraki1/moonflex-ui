@@ -2,7 +2,7 @@
 import LandingPage from "@/components/landing";
 import FilmList from "../components/List";
 import Film from "@/models/Film";
-import LoadingSpinner from "../components/landing";
+import LoadingSpinner from "@/components/UI/LoadingSpinner";
 import { useEffect, useState } from "react";
 
 export default function Home() {
