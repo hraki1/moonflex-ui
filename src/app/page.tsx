@@ -2,6 +2,7 @@
 import LandingPage from "@/components/landing";
 import FilmList from "../components/List";
 import Film from "@/models/Film";
+import LoadingSpinner from "../components/landing";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -26,7 +27,11 @@ export default function Home() {
 
   console.log(movies);
   if (!movies) {
-    return <p>loading...</p>;
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <LoadingSpinner />
+      </div>
+    );
   }
 
   let array_one: Film[] = [];
@@ -55,7 +60,6 @@ export default function Home() {
         <div className="mt-24">
           <FilmList title="Hard" films={array_four} />
         </div>
-       
       </div>
     </>
   );
