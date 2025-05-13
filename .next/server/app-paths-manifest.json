@@ -1,8 +1,5 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
   "/auth/page": "app/auth/page.js",
-  "/movies/page": "app/movies/page.js",
-  "/new-popular/page": "app/new-popular/page.js",
-  "/page": "app/page.js",
-  "/tv-shows/page": "app/tv-shows/page.js"
+  "/logout/page": "app/logout/page.js",
+  "/page": "app/page.js"
 }

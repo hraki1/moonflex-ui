@@ -2,38 +2,34 @@
   "node": {
     "7f8f4d58adc528e97fae4710066bd0a7b111347652": {
       "workers": {
-        "app/_not-found/page": {
-          "moduleId": "[project]/.next-internal/server/app/_not-found/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false
-        },
         "app/auth/page": {
           "moduleId": "[project]/.next-internal/server/app/auth/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/actions/SignupAction.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/actions/LoginAction.tsx [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false
         },
-        "app/movies/page": {
-          "moduleId": "[project]/.next-internal/server/app/movies/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false
-        },
-        "app/new-popular/page": {
-          "moduleId": "[project]/.next-internal/server/app/new-popular/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+        "app/logout/page": {
+          "moduleId": "[project]/.next-internal/server/app/logout/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/actions/logoutAction.tsx [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false
         },
         "app/page": {
           "moduleId": "[project]/.next-internal/server/app/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false
-        },
-        "app/tv-shows/page": {
-          "moduleId": "[project]/.next-internal/server/app/tv-shows/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+        }
+      },
+      "layer": {
+        "app/auth/page": "rsc",
+        "app/logout/page": "rsc",
+        "app/page": "rsc"
+      }
+    },
+    "7f31ad9c0e9b9ceb8e2df038fd2fce9938d7d69092": {
+      "workers": {
+        "app/logout/page": {
+          "moduleId": "[project]/.next-internal/server/app/logout/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/actions/logoutAction.tsx [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false
         }
       },
       "layer": {
-        "app/_not-found/page": "rsc",
-        "app/auth/page": "rsc",
-        "app/movies/page": "rsc",
-        "app/new-popular/page": "rsc",
-        "app/page": "rsc",
-        "app/tv-shows/page": "rsc"
+        "app/logout/page": "action-browser"
       }
     },
     "7f951f619351a3a56e682e1cf6e502a59dd1b3162c": {

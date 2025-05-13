@@ -812,12 +812,20 @@
     height: 300px;
   }
 
+  .h-\[calc\(\)\] {
+    height: calc();
+  }
+
   .h-\[calc\(100vh\+64px\)\] {
     height: calc(100vh + 64px);
   }
 
   .h-\[calc\(100vh-60px\)\] {
     height: calc(100vh - 60px);
+  }
+
+  .h-\[calc\] {
+    height: calc;
   }
 
   .h-auto {
