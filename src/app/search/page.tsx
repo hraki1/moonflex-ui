@@ -141,7 +141,7 @@ export default function SearchPage() {
       />
 
       {isLoading && (
-        <div className="flex justify-center min-h-[calc(100vh-60)] items-center py-8">
+        <div className="flex justify-center min-h-[calc(100vh-60px)] items-center py-8">
           <LoadingSpinner />
           <span className="ml-2">جاري البحث...</span>
         </div>
