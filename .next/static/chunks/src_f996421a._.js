@@ -151,7 +151,7 @@ function Navigation({ user }) {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                 href: "/",
-                                className: "text-red-600 font-bold text-3xl ml-1 md:ml-2 lg:ml-5",
+                                className: "text-red-600 font-bold text-3xl ml-2 md:ml-2 lg:ml-5",
                                 children: "MoonFlex"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Navigation.tsx",
@@ -283,7 +283,7 @@ function Navigation({ user }) {
                                         onClick: toggleProfileCard,
                                         className: "cursor-pointer flex items-center space-x-1",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "relative px-3 py-1 rounded bg-red-600 text-white flex items-center md:mr-2",
+                                            className: "relative px-3 py-1 rounded bg-red-600 text-white flex items-center mr-2 md:mr-2",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 className: "flex gap-1 text-lg font-medium items-center",
                                                 children: [
@@ -322,7 +322,7 @@ function Navigation({ user }) {
                                         columnNumber: 15
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                         href: "/auth?mode=login",
-                                        className: "px-3 py-2 rounded bg-red-600 text-white lg:mr-5 md:mr-2 text-lg font-medium",
+                                        className: "px-3 py-2 rounded bg-red-600 text-white mr-2 lg:mr-5 md:mr-2 text-lg font-medium",
                                         children: "Login"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Navigation.tsx",

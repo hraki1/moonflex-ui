@@ -75,7 +75,7 @@ export default function Navigation({ user }: Props) {
         <div className="flex items-center space-x-4">
           <Link
             href="/"
-            className="text-red-600 font-bold text-3xl ml-1 md:ml-2 lg:ml-5"
+            className="text-red-600 font-bold text-3xl ml-2 md:ml-2 lg:ml-5"
           >
             MoonFlex
           </Link>
@@ -160,7 +160,7 @@ export default function Navigation({ user }: Props) {
                 onClick={toggleProfileCard}
                 className="cursor-pointer flex items-center space-x-1"
               >
-                <div className="relative px-3 py-1 rounded bg-red-600 text-white flex items-center md:mr-2">
+                <div className="relative px-3 py-1 rounded bg-red-600 text-white flex items-center mr-2 md:mr-2">
                   <span className="flex gap-1 text-lg font-medium items-center">
                     <motion.div
                       animate={{ rotate: showProfileCard ? 360 : 180 }}
@@ -175,7 +175,7 @@ export default function Navigation({ user }: Props) {
             ) : (
               <Link
                 href="/auth?mode=login"
-                className="px-3 py-2 rounded bg-red-600 text-white lg:mr-5 md:mr-2 text-lg font-medium"
+                className="px-3 py-2 rounded bg-red-600 text-white mr-2 lg:mr-5 md:mr-2 text-lg font-medium"
               >
                 Login
               </Link>
