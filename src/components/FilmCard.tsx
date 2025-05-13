@@ -1,18 +1,19 @@
 import React from "react";
 import Image from "next/image";
 import Film from "@/models/Film";
-// import { useRouter } from "next/router";
 import Link from "next/link";
 
 interface FilmCardProps {
   film: Film;
   className?: string;
+  isTV: boolean;
 }
 
-const FilmCard: React.FC<FilmCardProps> = ({ film, className = "" }) => {
+const FilmCard: React.FC<FilmCardProps> = ({ film, isTV, className = "" }) => {
+  console.log(isTV);
   return (
     <Link
-      href={`/film/${film.id}`}
+      href={`/${isTV ? "tv-shows" : "film"}/${film.id}`}
       // onClick={() => onClickHandler("/films/123")}
       className={`film group overflow-hidden flex-none min-w-[180px] md:min-w-[200px] relative transition-all duration-300 hover:z-10 hover:scale-105 ${className}`}
     >
@@ -23,7 +24,7 @@ const FilmCard: React.FC<FilmCardProps> = ({ film, className = "" }) => {
               ? `https://image.tmdb.org/t/p/w500${film.poster_path}`
               : "https://via.placeholder.com/500x750?text=No+Poster"
           }
-          alt={film.title ?? film.name}
+          alt={`Poster of ${film.title ?? film.name}`}
           width={500}
           height={750}
           className="w-full h-full object-cover"
@@ -40,7 +41,10 @@ const FilmCard: React.FC<FilmCardProps> = ({ film, className = "" }) => {
       </div>
 
       <div className="film-info  absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-4 flex flex-col justify-end opacity-100 group-hover:opacity-100 transition-opacity duration-300">
-        <h3 className="text-white text-sm font-bold mb-1">{"2024"}</h3>
+        <h3 className="text-white text-sm font-bold mb-1">
+          {(film.release_date ?? film.first_air_date)?.split("-")[0] ?? "N/A"}
+        </h3>
+
         <h3 className="text-white text-lg font-bold line-clamp-2">
           {film.title ?? film.name}
         </h3>

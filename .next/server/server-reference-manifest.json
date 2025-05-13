@@ -14,16 +14,16 @@
           "moduleId": "[project]/.next-internal/server/app/movies/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false
         },
-        "app/my-list/page": {
-          "moduleId": "[project]/.next-internal/server/app/my-list/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false
-        },
         "app/new-popular/page": {
           "moduleId": "[project]/.next-internal/server/app/new-popular/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false
         },
         "app/page": {
           "moduleId": "[project]/.next-internal/server/app/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        },
+        "app/tv-shows/[tvId]/page": {
+          "moduleId": "[project]/.next-internal/server/app/tv-shows/[tvId]/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/actions/addFilmToMyListAction.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false
         },
         "app/tv-shows/page": {
@@ -35,9 +35,9 @@
         "app/_not-found/page": "rsc",
         "app/film/[filmId]/page": "rsc",
         "app/movies/page": "rsc",
-        "app/my-list/page": "rsc",
         "app/new-popular/page": "rsc",
         "app/page": "rsc",
+        "app/tv-shows/[tvId]/page": "rsc",
         "app/tv-shows/page": "rsc"
       }
     },
@@ -46,10 +46,15 @@
         "app/film/[filmId]/page": {
           "moduleId": "[project]/.next-internal/server/app/film/[filmId]/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/actions/addFilmToMyListAction.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false
+        },
+        "app/tv-shows/[tvId]/page": {
+          "moduleId": "[project]/.next-internal/server/app/tv-shows/[tvId]/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/actions/addFilmToMyListAction.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
         }
       },
       "layer": {
-        "app/film/[filmId]/page": "action-browser"
+        "app/film/[filmId]/page": "action-browser",
+        "app/tv-shows/[tvId]/page": "action-browser"
       }
     }
   },

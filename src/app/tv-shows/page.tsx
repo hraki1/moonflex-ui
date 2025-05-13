@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Film from "@/models/Film";
 import FilmList from "@/components/List";
+import LoadingSpinner from "@/components/UI/LoadingSpinner";
 
 const TMDB_API_KEY = "fbd1edacbe4e94f662341a99cd3be594";
 const API_LANGUAGE = "ar";
@@ -50,8 +51,8 @@ export default function TVShowsPage() {
 
   if (isLoading) {
     return (
-      <div className="h-screen flex justify-center items-center">
-        <h1 className="text-white text-2xl">جاري التحميل...</h1>
+      <div className="flex justify-center items-center h-[calc(100vh-60px)] ">
+        <LoadingSpinner />
       </div>
     );
   }
@@ -75,7 +76,7 @@ export default function TVShowsPage() {
     <div className="p-6 mt-36 text-white space-y-4">
       {movieLists.map((films, index) => (
         <div key={index} className={index > 0 ? "mt-24" : ""}>
-          <FilmList title={listTitles[index]} films={films} />
+          <FilmList isTV title={listTitles[index]} films={films} />
         </div>
       ))}
     </div>

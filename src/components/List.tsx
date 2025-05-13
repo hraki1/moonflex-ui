@@ -5,10 +5,11 @@ import Film from "@/models/Film";
 
 interface FilmListProps {
   title?: string;
+  isTV?: boolean;
   films: Film[];
 }
 
-export default function FilmList({ title, films }: FilmListProps) {
+export default function FilmList({ title, isTV, films }: FilmListProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
@@ -82,7 +83,7 @@ export default function FilmList({ title, films }: FilmListProps) {
           onScroll={checkScrollPosition}
         >
           {films.map((film) => (
-            <FilmCard key={film.id} film={film} />
+            <FilmCard key={film.id} isTV={isTV ?? false} film={film} />
           ))}
         </div>
 

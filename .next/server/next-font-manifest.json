@@ -9,13 +9,13 @@
     "[project]/src/app/movies/page": [
       "static/media/kJEnBuEW6A0lliaV_m88ja5Twtx8BWhtkDVmjZvM_oTZA81dNA6MzbxG-s.p.2d31ea24.woff2"
     ],
-    "[project]/src/app/my-list/page": [
-      "static/media/kJEnBuEW6A0lliaV_m88ja5Twtx8BWhtkDVmjZvM_oTZA81dNA6MzbxG-s.p.2d31ea24.woff2"
-    ],
     "[project]/src/app/new-popular/page": [
       "static/media/kJEnBuEW6A0lliaV_m88ja5Twtx8BWhtkDVmjZvM_oTZA81dNA6MzbxG-s.p.2d31ea24.woff2"
     ],
     "[project]/src/app/page": [
+      "static/media/kJEnBuEW6A0lliaV_m88ja5Twtx8BWhtkDVmjZvM_oTZA81dNA6MzbxG-s.p.2d31ea24.woff2"
+    ],
+    "[project]/src/app/tv-shows/[tvId]/page": [
       "static/media/kJEnBuEW6A0lliaV_m88ja5Twtx8BWhtkDVmjZvM_oTZA81dNA6MzbxG-s.p.2d31ea24.woff2"
     ],
     "[project]/src/app/tv-shows/page": [
