@@ -141,7 +141,7 @@ export default function SearchPage() {
       />
 
       {isLoading && (
-        <div className="flex justify-center min-h-[calc(100vh-60px)] items-center py-8">
+        <div className="flex justify-center h-[calc(100vh-60px)] items-center py-8">
           <LoadingSpinner />
           <span className="ml-2">جاري البحث...</span>
         </div>
@@ -157,7 +157,10 @@ export default function SearchPage() {
 
       {!isLoading && results.length > 0 && (
         <>
-          <div dir="rtl" className="flex text-2xl mr-4">{`نتائج البحث لـ "${debouncedQuery}"`}</div>
+          <div
+            dir="rtl"
+            className="flex text-2xl mr-4"
+          >{`نتائج البحث لـ "${debouncedQuery}"`}</div>
           <div className="mt-24">
             {movieLists.map((films, index) => (
               <div key={index} className={index > 0 ? "mt-24" : ""}>
