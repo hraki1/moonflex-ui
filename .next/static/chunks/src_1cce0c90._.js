@@ -394,13 +394,13 @@ function useDebounce(value, delay) {
 }
 _s(useDebounce, "KDuPAtDOgxm8PU6legVJOb3oOmA=");
 // Helper function to split array into chunks
-// const splitArray = (array: Film[], chunkSize: number): Film[][] => {
-//   const result = [];
-//   for (let i = 0; i < array.length; i += chunkSize) {
-//     result.push(array.slice(i, i + chunkSize));
-//   }
-//   return result;
-// };
+const splitArray = (array, chunkSize)=>{
+    const result = [];
+    for(let i = 0; i < array.length; i += chunkSize){
+        result.push(array.slice(i, i + chunkSize));
+    }
+    return result;
+};
 // Utility function to convert TMDB item to Film
 const mapToFilm = (item)=>({
         id: item.id,
@@ -443,15 +443,24 @@ function SearchPage() {
         enabled: !!debouncedQuery.trim(),
         staleTime: 5 * 60 * 1000
     });
+    // Memoize categorized movie lists
+    const movieLists = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+        "SearchPage.useMemo[movieLists]": ()=>{
+            if (!results.length) return [];
+            return splitArray(results, 6).slice(0, 4); // Get first 4 chunks of 5 movies each
+        }
+    }["SearchPage.useMemo[movieLists]"], [
+        results
+    ]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: " h-[calc(100vh-60px)] mt-20  px-6 text-white space-y-6 max-w-6xl mx-auto",
+        className: " min-h-[calc(100vh-60px)] mt-20  px-6 text-white space-y-6 max-w-6xl mx-auto",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                 className: "text-2xl font-bold text-center",
                 children: "ابحث عن الأفلام والمسلسلات"
             }, void 0, false, {
                 fileName: "[project]/src/app/search/page.tsx",
-                lineNumber: 124,
+                lineNumber: 130,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -463,7 +472,7 @@ function SearchPage() {
                 "aria-label": "Search for movies and TV shows"
             }, void 0, false, {
                 fileName: "[project]/src/app/search/page.tsx",
-                lineNumber: 128,
+                lineNumber: 134,
                 columnNumber: 7
             }, this),
             isLoading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -471,7 +480,7 @@ function SearchPage() {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$UI$2f$LoadingSpinner$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/src/app/search/page.tsx",
-                        lineNumber: 139,
+                        lineNumber: 145,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -479,13 +488,13 @@ function SearchPage() {
                         children: "جاري البحث..."
                     }, void 0, false, {
                         fileName: "[project]/src/app/search/page.tsx",
-                        lineNumber: 140,
+                        lineNumber: 146,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/search/page.tsx",
-                lineNumber: 138,
+                lineNumber: 144,
                 columnNumber: 9
             }, this),
             isError && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -495,29 +504,54 @@ function SearchPage() {
                     children: error instanceof Error ? error.message : "حدث خطأ أثناء البحث"
                 }, void 0, false, {
                     fileName: "[project]/src/app/search/page.tsx",
-                    lineNumber: 146,
+                    lineNumber: 152,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/search/page.tsx",
-                lineNumber: 145,
+                lineNumber: 151,
                 columnNumber: 9
             }, this),
-            !isLoading && results.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "mt-20",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$List$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                    title: `نتائج البحث لـ "${debouncedQuery}"`,
-                    films: results
-                }, void 0, false, {
-                    fileName: "[project]/src/app/search/page.tsx",
-                    lineNumber: 154,
-                    columnNumber: 11
-                }, this)
-            }, void 0, false, {
-                fileName: "[project]/src/app/search/page.tsx",
-                lineNumber: 153,
-                columnNumber: 9
-            }, this),
+            !isLoading && results.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mt-20",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$List$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                            title: `نتائج البحث لـ "${debouncedQuery}"`,
+                            films: results.splice(0, 7)
+                        }, void 0, false, {
+                            fileName: "[project]/src/app/search/page.tsx",
+                            lineNumber: 161,
+                            columnNumber: 13
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/search/page.tsx",
+                        lineNumber: 160,
+                        columnNumber: 11
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mt-24",
+                        children: movieLists.map((films, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: index > 0 ? "mt-24" : "",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$List$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                    films: films
+                                }, void 0, false, {
+                                    fileName: "[project]/src/app/search/page.tsx",
+                                    lineNumber: 169,
+                                    columnNumber: 17
+                                }, this)
+                            }, index, false, {
+                                fileName: "[project]/src/app/search/page.tsx",
+                                lineNumber: 168,
+                                columnNumber: 15
+                            }, this))
+                    }, void 0, false, {
+                        fileName: "[project]/src/app/search/page.tsx",
+                        lineNumber: 166,
+                        columnNumber: 11
+                    }, this)
+                ]
+            }, void 0, true),
             !isLoading && debouncedQuery && results.length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "text-center py-8",
                 children: [
@@ -526,7 +560,7 @@ function SearchPage() {
                         children: "لا توجد نتائج للبحث"
                     }, void 0, false, {
                         fileName: "[project]/src/app/search/page.tsx",
-                        lineNumber: 163,
+                        lineNumber: 178,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -534,23 +568,23 @@ function SearchPage() {
                         children: "حاول استخدام كلمات بحث مختلفة"
                     }, void 0, false, {
                         fileName: "[project]/src/app/search/page.tsx",
-                        lineNumber: 164,
+                        lineNumber: 179,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/search/page.tsx",
-                lineNumber: 162,
+                lineNumber: 177,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/search/page.tsx",
-        lineNumber: 123,
+        lineNumber: 129,
         columnNumber: 5
     }, this);
 }
-_s1(SearchPage, "jpcGhxBbxdGWzRUVHF+QkawGogw=", false, function() {
+_s1(SearchPage, "wWJBcAwxCWPQebIvttDU455Uwu0=", false, function() {
     return [
         useDebounce,
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useQuery$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useQuery"]

@@ -6,87 +6,19 @@
           "moduleId": "[project]/.next-internal/server/app/_not-found/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false
         },
-        "app/auth/page": {
-          "moduleId": "[project]/.next-internal/server/app/auth/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/actions/SignupAction.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/actions/LoginAction.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false
-        },
-        "app/logout/page": {
-          "moduleId": "[project]/.next-internal/server/app/logout/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/actions/logoutAction.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false
-        },
-        "app/movies/page": {
-          "moduleId": "[project]/.next-internal/server/app/movies/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false
-        },
-        "app/my-list/page": {
-          "moduleId": "[project]/.next-internal/server/app/my-list/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false
-        },
-        "app/new-popular/page": {
-          "moduleId": "[project]/.next-internal/server/app/new-popular/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false
-        },
         "app/page": {
           "moduleId": "[project]/.next-internal/server/app/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false
-        },
-        "app/profile/page": {
-          "moduleId": "[project]/.next-internal/server/app/profile/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false
         },
         "app/search/page": {
           "moduleId": "[project]/.next-internal/server/app/search/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false
-        },
-        "app/tv-shows/page": {
-          "moduleId": "[project]/.next-internal/server/app/tv-shows/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false
         }
       },
       "layer": {
         "app/_not-found/page": "rsc",
-        "app/auth/page": "rsc",
-        "app/logout/page": "rsc",
-        "app/movies/page": "rsc",
-        "app/my-list/page": "rsc",
-        "app/new-popular/page": "rsc",
         "app/page": "rsc",
-        "app/profile/page": "rsc",
-        "app/search/page": "rsc",
-        "app/tv-shows/page": "rsc"
-      }
-    },
-    "7fe535830ae453c4104b349360f7dc55eddecc44e1": {
-      "workers": {
-        "app/logout/page": {
-          "moduleId": "[project]/.next-internal/server/app/logout/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/actions/logoutAction.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false
-        }
-      },
-      "layer": {
-        "app/logout/page": "action-browser"
-      }
-    },
-    "7f951f619351a3a56e682e1cf6e502a59dd1b3162c": {
-      "workers": {
-        "app/auth/page": {
-          "moduleId": "[project]/.next-internal/server/app/auth/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/actions/SignupAction.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/actions/LoginAction.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false
-        }
-      },
-      "layer": {
-        "app/auth/page": "action-browser"
-      }
-    },
-    "7fc2bc24f4286cdfb73a0469a11e46370516f30672": {
-      "workers": {
-        "app/auth/page": {
-          "moduleId": "[project]/.next-internal/server/app/auth/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/actions/SignupAction.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/lib/actions/LoginAction.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false
-        }
-      },
-      "layer": {
-        "app/auth/page": "action-browser"
+        "app/search/page": "rsc"
       }
     }
   },

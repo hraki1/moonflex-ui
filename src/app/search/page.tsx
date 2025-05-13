@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import Film from "@/models/Film";
 import FilmList from "@/components/List";
@@ -52,13 +52,13 @@ function useDebounce<T>(value: T, delay: number): T {
 }
 
 // Helper function to split array into chunks
-// const splitArray = (array: Film[], chunkSize: number): Film[][] => {
-//   const result = [];
-//   for (let i = 0; i < array.length; i += chunkSize) {
-//     result.push(array.slice(i, i + chunkSize));
-//   }
-//   return result;
-// };
+const splitArray = (array: Film[], chunkSize: number): Film[][] => {
+  const result = [];
+  for (let i = 0; i < array.length; i += chunkSize) {
+    result.push(array.slice(i, i + chunkSize));
+  }
+  return result;
+};
 
 // Utility function to convert TMDB item to Film
 const mapToFilm = (item: TMDBItem): Film => ({
@@ -119,8 +119,14 @@ export default function SearchPage() {
     staleTime: 5 * 60 * 1000, // 5 minutes
   });
 
+  // Memoize categorized movie lists
+  const movieLists = useMemo(() => {
+    if (!results.length) return [];
+    return splitArray(results, 6).slice(0, 4); // Get first 4 chunks of 5 movies each
+  }, [results]);
+
   return (
-    <div className=" h-[calc(100vh-60px)] mt-20  px-6 text-white space-y-6 max-w-6xl mx-auto">
+    <div className=" min-h-[calc(100vh-60px)] mt-20  px-6 text-white space-y-6 max-w-6xl mx-auto">
       <h1 className="text-2xl font-bold text-center">
         ابحث عن الأفلام والمسلسلات
       </h1>
@@ -150,12 +156,21 @@ export default function SearchPage() {
       )}
 
       {!isLoading && results.length > 0 && (
-        <div className="mt-20">
-          <FilmList
-            title={`نتائج البحث لـ "${debouncedQuery}"`}
-            films={results}
-          />
-        </div>
+        <>
+          <div className="mt-20">
+            <FilmList
+              title={`نتائج البحث لـ "${debouncedQuery}"`}
+              films={results.splice(0, 7)}
+            />
+          </div>
+          <div className="mt-24">
+            {movieLists.map((films, index) => (
+              <div key={index} className={index > 0 ? "mt-24" : ""}>
+                <FilmList films={films} />
+              </div>
+            ))}
+          </div>
+        </>
       )}
 
       {!isLoading && debouncedQuery && results.length === 0 && (

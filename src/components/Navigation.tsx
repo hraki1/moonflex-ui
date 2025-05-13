@@ -246,7 +246,7 @@ export default function Navigation({ user }: Props) {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-black/70 absolute top-16 left-0 right-0 py-4 px-4">
+        <div className="md:hidden bg-black/80 absolute top-16 left-0 right-0 py-4 px-4">
           <div className="flex flex-col space-y-4">
             {[
               { href: "/", label: "Home" },
