@@ -1,5 +1,5 @@
 "use client";
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import { useAppDispatch } from "@/store/hooks";
@@ -7,12 +7,14 @@ import { authActions } from "@/store/slices/authSlice";
 
 import { signupAction } from "@/lib/actions/SignupAction";
 import { loginAction } from "@/lib/actions/LoginAction";
+import { Eye, EyeOff } from "lucide-react";
 
 const AuthPage = () => {
   const dispatch = useAppDispatch();
   const router = useRouter();
   const searchParams = useSearchParams();
   const mode = searchParams.get("mode");
+  const [showPassword, setShowPassword] = useState<boolean>(false);
 
   const actionForm = mode === "signup" ? signupAction : loginAction;
 
@@ -93,18 +95,26 @@ const AuthPage = () => {
               disabled={isLoading}
             />
           </label>
-
-          <label className="inline-block w-full">
-            <input
-              name="password"
-              type="password"
-              placeholder="Password"
-              defaultValue={formState.user?.password}
-              className="input"
-              required
-              disabled={isLoading}
-            />
-          </label>
+          <div className="relative">
+            <label className="inline-block w-full">
+              <input
+                name="password"
+                type={showPassword ? "text" : "password"}
+                placeholder="Password"
+                defaultValue={formState.user?.password}
+                className="input"
+                required
+                disabled={isLoading}
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword((prev) => !prev)}
+                className="absolute inset-y-0 right-3 flex items-center text-gray-800 hover:text-gray-600 focus:outline-none"
+              >
+                {showPassword ? <Eye size={20} /> : <EyeOff size={20} />}
+              </button>
+            </label>
+          </div>
         </div>
 
         <button
