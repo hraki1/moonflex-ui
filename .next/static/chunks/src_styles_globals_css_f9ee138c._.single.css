@@ -863,6 +863,10 @@
     min-height: 300px;
   }
 
+  .min-h-\[calc\(100vh-60\)\] {
+    min-height: calc(100vh - 60);
+  }
+
   .min-h-\[calc\(100vh-60px\)\] {
     min-height: calc(100vh - 60px);
   }

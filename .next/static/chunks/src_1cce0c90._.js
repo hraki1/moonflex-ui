@@ -476,7 +476,7 @@ function SearchPage() {
                 columnNumber: 7
             }, this),
             isLoading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex justify-center items-center py-8",
+                className: "flex justify-center min-h-[calc(100vh-60)] items-center py-8",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$UI$2f$LoadingSpinner$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/src/app/search/page.tsx",
@@ -515,15 +515,9 @@ function SearchPage() {
             !isLoading && results.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "mt-20",
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$List$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                            title: `نتائج البحث لـ "${debouncedQuery}"`,
-                            films: results.splice(0, 7)
-                        }, void 0, false, {
-                            fileName: "[project]/src/app/search/page.tsx",
-                            lineNumber: 161,
-                            columnNumber: 13
-                        }, this)
+                        dir: "rtl",
+                        className: "flex text-2xl mr-4",
+                        children: `نتائج البحث لـ "${debouncedQuery}"`
                     }, void 0, false, {
                         fileName: "[project]/src/app/search/page.tsx",
                         lineNumber: 160,
@@ -537,17 +531,17 @@ function SearchPage() {
                                     films: films
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/search/page.tsx",
-                                    lineNumber: 169,
+                                    lineNumber: 164,
                                     columnNumber: 17
                                 }, this)
                             }, index, false, {
                                 fileName: "[project]/src/app/search/page.tsx",
-                                lineNumber: 168,
+                                lineNumber: 163,
                                 columnNumber: 15
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/app/search/page.tsx",
-                        lineNumber: 166,
+                        lineNumber: 161,
                         columnNumber: 11
                     }, this)
                 ]
@@ -560,7 +554,7 @@ function SearchPage() {
                         children: "لا توجد نتائج للبحث"
                     }, void 0, false, {
                         fileName: "[project]/src/app/search/page.tsx",
-                        lineNumber: 178,
+                        lineNumber: 173,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -568,13 +562,13 @@ function SearchPage() {
                         children: "حاول استخدام كلمات بحث مختلفة"
                     }, void 0, false, {
                         fileName: "[project]/src/app/search/page.tsx",
-                        lineNumber: 179,
+                        lineNumber: 174,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/search/page.tsx",
-                lineNumber: 177,
+                lineNumber: 172,
                 columnNumber: 9
             }, this)
         ]
