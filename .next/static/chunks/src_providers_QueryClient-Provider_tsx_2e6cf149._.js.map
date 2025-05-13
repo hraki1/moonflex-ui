@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Ahmad%20Alhraki/Desktop/moonflex/src/providers/QueryClient-Provider.tsx"],"sourcesContent":["\"use client\";\r\nimport { QueryClient, QueryClientProvider } from \"@tanstack/react-query\";\r\n\r\nexport default function QueryProvider({\r\n  children,\r\n}: {\r\n  children: React.ReactNode;\r\n}) {\r\n  const client = new QueryClient();\r\n\r\n  return <QueryClientProvider client={client}>{children}</QueryClientProvider>;\r\n}\r\n"],"names":[],"mappings":";;;;AACA;AAAA;AADA;;;AAGe,SAAS,cAAc,EACpC,QAAQ,EAGT;IACC,MAAM,SAAS,IAAI,gLAAA,CAAA,cAAW;IAE9B,qBAAO,6LAAC,yLAAA,CAAA,sBAAmB;QAAC,QAAQ;kBAAS;;;;;;AAC/C;KARwB","debugId":null}}]
+}

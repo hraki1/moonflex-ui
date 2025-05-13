@@ -7,6 +7,7 @@ import "../styles/globals.css";
 import { League_Spartan } from "next/font/google";
 import { NetflixFooter } from "@/components/Footer";
 import ReduxProvider from "@/providers/redux-provider";
+import QueryProvider from "@/providers/QueryClient-Provider";
 import { checkAuth } from "@/lib/actions/checkAuthAction";
 // import { checkAuth } from "@/lib/actions/checkAuthAction";
 
@@ -46,12 +47,14 @@ export default async function RootLayout({
       <body
         className={`${neuton.className} antialiased select-none duration-300`}
       >
-        <ReduxProvider>
-          <Navigation user={user ?? undefined} />
-          <main>{children}</main>
-          <NetflixFooter />
-          <div id="modal-root" />
-        </ReduxProvider>
+        <QueryProvider>
+          <ReduxProvider>
+            <Navigation user={user ?? undefined} />
+            <main>{children}</main>
+            <NetflixFooter />
+            <div id="modal-root" />
+          </ReduxProvider>
+        </QueryProvider>
       </body>
     </html>
   );
