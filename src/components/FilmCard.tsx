@@ -10,11 +10,6 @@ interface FilmCardProps {
 }
 
 const FilmCard: React.FC<FilmCardProps> = ({ film, className = "" }) => {
-  // const router = useRouter();
-  // const onClickHandler = (path: string) => {
-  //   router.push(path);
-  // };
-
   return (
     <Link
       href={`/film/${film.id}`}
@@ -28,7 +23,7 @@ const FilmCard: React.FC<FilmCardProps> = ({ film, className = "" }) => {
               ? `https://image.tmdb.org/t/p/w500${film.poster_path}`
               : "https://via.placeholder.com/500x750?text=No+Poster"
           }
-          alt={film.title}
+          alt={film.title ?? film.name}
           width={500}
           height={750}
           className="w-full h-full object-cover"
@@ -38,7 +33,7 @@ const FilmCard: React.FC<FilmCardProps> = ({ film, className = "" }) => {
 
         <div
           className="play-button absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 rounded py-3 px-6 transition-all duration-300 opacity-0 group-hover:opacity-100"
-          aria-label={`Play ${film.title}`}
+          aria-label={`Play ${film.title ?? film.name}`}
         >
           <div className="text-white text-sm font-bold play-arrow"></div>
         </div>
@@ -47,7 +42,7 @@ const FilmCard: React.FC<FilmCardProps> = ({ film, className = "" }) => {
       <div className="film-info  absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-4 flex flex-col justify-end opacity-100 group-hover:opacity-100 transition-opacity duration-300">
         <h3 className="text-white text-sm font-bold mb-1">{"2024"}</h3>
         <h3 className="text-white text-lg font-bold line-clamp-2">
-          {film.title}
+          {film.title ?? film.name}
         </h3>
       </div>
     </Link>

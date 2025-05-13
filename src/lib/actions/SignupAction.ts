@@ -14,6 +14,7 @@ type CreateUserResult = {
     name: string;
     email: string;
     password?: string;
+    favoriteFilms?: string[];
   };
   success?: boolean;
 };
@@ -67,6 +68,7 @@ export const signupAction = async (
     user: {
       name,
       email,
+      favoriteFilms: [],
     },
     success: true,
   };

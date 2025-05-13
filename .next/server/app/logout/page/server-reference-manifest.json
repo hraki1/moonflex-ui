@@ -3,7 +3,7 @@
     "7f8f4d58adc528e97fae4710066bd0a7b111347652": {
       "workers": {
         "app/logout/page": {
-          "moduleId": "[project]/.next-internal/server/app/logout/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/actions/logoutAction.tsx [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "moduleId": "[project]/.next-internal/server/app/logout/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/actions/logoutAction.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false
         }
       },
@@ -11,10 +11,10 @@
         "app/logout/page": "rsc"
       }
     },
-    "7f31ad9c0e9b9ceb8e2df038fd2fce9938d7d69092": {
+    "7fe535830ae453c4104b349360f7dc55eddecc44e1": {
       "workers": {
         "app/logout/page": {
-          "moduleId": "[project]/.next-internal/server/app/logout/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/actions/logoutAction.tsx [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "moduleId": "[project]/.next-internal/server/app/logout/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/lib/actions/checkAuthAction.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/lib/actions/logoutAction.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false
         }
       },

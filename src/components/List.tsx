@@ -4,7 +4,7 @@ import FilmCard from "./FilmCard";
 import Film from "@/models/Film";
 
 interface FilmListProps {
-  title: string;
+  title?: string;
   films: Film[];
 }
 

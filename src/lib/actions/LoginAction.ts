@@ -14,6 +14,7 @@ type LoginResult = {
     name: string;
     email: string;
     password?: string;
+    favoriteFilms?: string[];
   };
   success?: boolean;
 };
@@ -72,6 +73,7 @@ export const loginAction = async (
       user: {
         name: user.name,
         email: user.email,
+        favoriteFilms: user.favoriteFilms,
       },
       success: true,
     };

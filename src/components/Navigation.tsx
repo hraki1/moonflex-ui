@@ -13,6 +13,7 @@ type Props = {
   user?: {
     name: string;
     email: string;
+    favoriteFilms: number[];
   };
 };
 

@@ -528,9 +528,9 @@ const checkAuth = async ()=>{
         const user = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$models$2f$User$2e$ts__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"].findById(decoded.id).select("-password");
         const plainUser = {
             name: user.name,
-            email: user.email
+            email: user.email,
+            favoriteFilms: user.favoriteFilms
         };
-        console.log(user);
         return {
             user: plainUser
         };

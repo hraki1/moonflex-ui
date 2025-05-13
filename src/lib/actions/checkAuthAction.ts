@@ -23,9 +23,9 @@ export const checkAuth = async () => {
     const plainUser = {
       name: user.name,
       email: user.email,
+      favoriteFilms: user.favoriteFilms,
     };
 
-    console.log(user);
     return { user: plainUser };
   } catch (error) {
     console.error("Auth check error:", error);

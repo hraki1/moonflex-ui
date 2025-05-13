@@ -2,12 +2,19 @@
 
 import Image from "next/image";
 import { use, useEffect, useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
-import { Star, Clock, CalendarDays, Play, Plus } from "lucide-react";
+import { Star, Clock, CalendarDays, Play, Plus, Check } from "lucide-react";
 import Modal from "@/components/UI/Modal";
 import ReactPlayer from "react-player";
 import Film from "@/models/Film";
 import LoadingSpinner from "@/components/UI/LoadingSpinner";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { RootState } from "@/store/store";
+import { addToMyListAction } from "@/lib/actions/addFilmToMyListAction";
+import { authActions } from "@/store/slices/authSlice";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function FilmDetails({
   params,
@@ -19,6 +26,10 @@ export default function FilmDetails({
   console.log(filmId);
   const [trailerKey, setTrailerKey] = useState(null);
   const [movie, setMovie] = useState<Film>();
+  const router = useRouter();
+
+  const auth = useAppSelector((state: RootState) => state.auth);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     async function fetchData() {
@@ -43,8 +54,30 @@ export default function FilmDetails({
     fetchData();
   }, [filmId]);
 
-  function toggleOpenModal() {
+  async function toggleOpenModal() {
     setModalIsOpen((prev) => !prev);
+  }
+
+  async function toggleAddRemoveToMyListHandler() {
+    if (!auth.isLoggedIn) {
+      return router.push("/auth");
+    }
+
+    const res = await addToMyListAction({ filmId });
+
+    if (res?.message?.[0]) {
+      toast.success(res.message[0]);
+      dispatch(authActions.ToggleAddRemoveItemFromMyList(filmId));
+    } else {
+      toast.error("فشل في إضافة الفيلم.");
+    }
+  }
+
+  let isAddedToMyList;
+
+  if (auth.isLoggedIn) {
+    isAddedToMyList = auth.user?.favoriteFilms.some((id) => id === filmId);
+    console.log(isAddedToMyList);
   }
 
   console.log(trailerKey);
@@ -74,6 +107,7 @@ export default function FilmDetails({
 
   return (
     <>
+      <Toaster position="top-right" reverseOrder={false} />
       <Modal open={modalisOpen} onClose={toggleOpenModal}>
         <div className="relative w-full bg-gray-900 rounded-lg overflow-hidden shadow-2xl">
           {/* Video Player Container */}
@@ -144,7 +178,6 @@ export default function FilmDetails({
               alt={filmData.title}
               fill
               className="object-cover"
-              priority
             />
           </div>
 
@@ -219,9 +252,36 @@ export default function FilmDetails({
                 >
                   <Play className="w-4 h-4 sm:w-5 sm:h-5" /> Watch Trailer
                 </button>
-                <button className="px-6 sm:px-8 py-2 sm:py-3 bg-gray-800 hover:bg-gray-700 rounded-lg font-semibold flex items-center justify-center gap-2 transition-colors">
-                  <Plus className="w-4 h-4 sm:w-5 sm:h-5" /> My List
-                </button>
+                <motion.button
+                  whileTap={{ scale: 0.95 }}
+                  className="px-6 sm:px-8 py-2 sm:py-3 bg-gray-800 hover:bg-gray-700 rounded-lg font-semibold flex items-center justify-center gap-2 transition-colors"
+                  onClick={toggleAddRemoveToMyListHandler}
+                >
+                  <AnimatePresence mode="wait" initial={false}>
+                    {isAddedToMyList ? (
+                      <motion.span
+                        key="check"
+                        initial={{ rotate: 180, opacity: 0 }}
+                        animate={{ rotate: 0, opacity: 1 }}
+                        exit={{ rotate: 180, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <Check className="w-4 h-4 sm:w-5 sm:h-5" />
+                      </motion.span>
+                    ) : (
+                      <motion.span
+                        key="plus"
+                        initial={{ rotate: 180, opacity: 0 }}
+                        animate={{ rotate: 0, opacity: 1 }}
+                        exit={{ rotate: 180, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <Plus className="w-4 h-4 sm:w-5 sm:h-5" />
+                      </motion.span>
+                    )}
+                  </AnimatePresence>
+                  <span>My List</span>
+                </motion.button>
               </div>
 
               {/* Description */}

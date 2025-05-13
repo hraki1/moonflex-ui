@@ -5,5 +5,6 @@ export default interface Film {
   popularity: string;
   poster_path: string;
   title: string;
+  name: string;
   release_date: string;
 }

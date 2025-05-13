@@ -4,6 +4,7 @@ interface AuthState {
   user: {
     name: string;
     email: string;
+    favoriteFilms: number[];
   } | null;
   isLoggedIn: boolean;
 }
@@ -20,7 +21,7 @@ const authSlice = createSlice({
     login: (
       state,
       action: PayloadAction<{
-        user: { name: string; email: string };
+        user: { name: string; email: string; favoriteFilms: number[] };
       }>
     ) => {
       state.user = action.payload.user;
@@ -29,6 +30,20 @@ const authSlice = createSlice({
     logout: (state) => {
       state.user = null;
       state.isLoggedIn = false;
+    },
+    ToggleAddRemoveItemFromMyList: (state, action: PayloadAction<number>) => {
+      const isAddedToMyList = state.user?.favoriteFilms.some(
+        (id) => id === action.payload
+      );
+      if (isAddedToMyList) {
+        if (state.user) {
+          state.user.favoriteFilms = state.user.favoriteFilms.filter(
+            (id) => id !== action.payload
+          );
+        }
+      } else {
+        state.user?.favoriteFilms.push(action.payload);
+      }
     },
   },
 });

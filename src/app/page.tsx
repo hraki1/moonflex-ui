@@ -1,9 +1,7 @@
 "use client";
 
 import { useEffect, useState, useMemo } from "react";
-import { useAppSelector } from "@/store/hooks";
 import Film from "@/models/Film";
-import { RootState } from "@/store/store";
 import LoadingSpinner from "@/components/UI/LoadingSpinner";
 import LandingPage from "@/components/landing";
 import FilmList from "@/components/List";
@@ -26,10 +24,8 @@ export default function HomePage() {
   const [movies, setMovies] = useState<Film[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const auth = useAppSelector((state: RootState) => state.auth);
 
-  console.log(auth);
-
+  console.log(movies);
   // Fetch movies data
   useEffect(() => {
     const fetchMovies = async () => {
@@ -60,14 +56,14 @@ export default function HomePage() {
   // Memoize categorized movie lists
   const movieLists = useMemo(() => {
     if (!movies.length) return [];
-    return splitArray(movies, 5).slice(0, 4); // Get first 4 chunks of 5 movies each
+    return splitArray(movies, 6).slice(0, 4); // Get first 4 chunks of 5 movies each
   }, [movies]);
 
   const listTitles = ["Popular on Netflix", "Action", "Romantic", "Hard"];
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center h-screen">
+      <div className="flex justify-center items-center h-[calc(100vh-60px)] ">
         <LoadingSpinner />
       </div>
     );

@@ -24,6 +24,7 @@ const AuthPage = () => {
       name: "",
       email: "",
       password: "",
+      favoriteFilms: [],
     },
     success: false,
   });
@@ -35,6 +36,7 @@ const AuthPage = () => {
           user: {
             name: formState.user?.name ?? "",
             email: formState.user?.email ?? "",
+            favoriteFilms: (formState.user?.favoriteFilms ?? []).map(Number),
           },
         })
       );
