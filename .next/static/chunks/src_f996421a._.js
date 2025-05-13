@@ -151,7 +151,7 @@ function Navigation({ user }) {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                 href: "/",
-                                className: "text-red-600 font-bold text-3xl",
+                                className: "text-red-600 font-bold text-3xl ml-1 md:ml-2 lg:ml-5",
                                 children: "MoonFlex"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Navigation.tsx",
@@ -184,7 +184,7 @@ function Navigation({ user }) {
                                             children: label
                                         }, href, false, {
                                             fileName: "[project]/src/components/Navigation.tsx",
-                                            lineNumber: 86,
+                                            lineNumber: 89,
                                             columnNumber: 15
                                         }, this)),
                                     auth.isLoggedIn && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -193,13 +193,13 @@ function Navigation({ user }) {
                                         children: "My List"
                                     }, "/my-list", false, {
                                         fileName: "[project]/src/components/Navigation.tsx",
-                                        lineNumber: 95,
+                                        lineNumber: 98,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Navigation.tsx",
-                                lineNumber: 79,
+                                lineNumber: 82,
                                 columnNumber: 11
                             }, this)
                         ]
@@ -224,17 +224,17 @@ function Navigation({ user }) {
                                         clipRule: "evenodd"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Navigation.tsx",
-                                        lineNumber: 115,
+                                        lineNumber: 118,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Navigation.tsx",
-                                    lineNumber: 109,
+                                    lineNumber: 112,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Navigation.tsx",
-                                lineNumber: 108,
+                                lineNumber: 111,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -253,7 +253,7 @@ function Navigation({ user }) {
                                         d: "M6 18L18 6M6 6l12 12"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Navigation.tsx",
-                                        lineNumber: 135,
+                                        lineNumber: 138,
                                         columnNumber: 17
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
                                         strokeLinecap: "round",
@@ -262,17 +262,17 @@ function Navigation({ user }) {
                                         d: "M4 6h16M4 12h16M4 18h16"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Navigation.tsx",
-                                        lineNumber: 142,
+                                        lineNumber: 145,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Navigation.tsx",
-                                    lineNumber: 127,
+                                    lineNumber: 130,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Navigation.tsx",
-                                lineNumber: 123,
+                                lineNumber: 126,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -283,7 +283,7 @@ function Navigation({ user }) {
                                         onClick: toggleProfileCard,
                                         className: "cursor-pointer flex items-center space-x-1",
                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "relative px-3 py-1 rounded bg-red-600 text-white flex items-center md:mr-5",
+                                            className: "relative px-3 py-1 rounded bg-red-600 text-white flex items-center md:mr-2",
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 className: "flex gap-1 text-lg font-medium items-center",
                                                 children: [
@@ -296,37 +296,37 @@ function Navigation({ user }) {
                                                         },
                                                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$up$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronUp$3e$__["ChevronUp"], {}, void 0, false, {
                                                             fileName: "[project]/src/components/Navigation.tsx",
-                                                            lineNumber: 166,
+                                                            lineNumber: 169,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Navigation.tsx",
-                                                        lineNumber: 162,
+                                                        lineNumber: 165,
                                                         columnNumber: 21
                                                     }, this),
                                                     auth.user?.name.split(" ")[0]
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/Navigation.tsx",
-                                                lineNumber: 161,
+                                                lineNumber: 164,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Navigation.tsx",
-                                            lineNumber: 160,
+                                            lineNumber: 163,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Navigation.tsx",
-                                        lineNumber: 155,
+                                        lineNumber: 158,
                                         columnNumber: 15
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                         href: "/auth?mode=login",
-                                        className: "px-3 py-2 rounded bg-red-600 text-white md:mr-5 text-lg font-medium",
+                                        className: "px-3 py-2 rounded bg-red-600 text-white lg:mr-5 md:mr-2 text-lg font-medium",
                                         children: "Login"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Navigation.tsx",
-                                        lineNumber: 173,
+                                        lineNumber: 176,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
@@ -355,7 +355,7 @@ function Navigation({ user }) {
                                                             size: 18
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/Navigation.tsx",
-                                                            lineNumber: 194,
+                                                            lineNumber: 197,
                                                             columnNumber: 29
                                                         }, this),
                                                         label: "PROFILE",
@@ -366,7 +366,7 @@ function Navigation({ user }) {
                                                             size: 18
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/Navigation.tsx",
-                                                            lineNumber: 199,
+                                                            lineNumber: 202,
                                                             columnNumber: 29
                                                         }, this),
                                                         label: "FAVORITES"
@@ -376,7 +376,7 @@ function Navigation({ user }) {
                                                             size: 18
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/Navigation.tsx",
-                                                            lineNumber: 203,
+                                                            lineNumber: 206,
                                                             columnNumber: 29
                                                         }, this),
                                                         label: "PASSWORD UPDATE"
@@ -393,7 +393,7 @@ function Navigation({ user }) {
                                                                 children: icon
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/Navigation.tsx",
-                                                                lineNumber: 215,
+                                                                lineNumber: 218,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -401,20 +401,20 @@ function Navigation({ user }) {
                                                                 children: label
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/Navigation.tsx",
-                                                                lineNumber: 216,
+                                                                lineNumber: 219,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, label, true, {
                                                         fileName: "[project]/src/components/Navigation.tsx",
-                                                        lineNumber: 207,
+                                                        lineNumber: 210,
                                                         columnNumber: 21
                                                     }, this)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "border-t border-gray-700 mx-2"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/Navigation.tsx",
-                                                    lineNumber: 219,
+                                                    lineNumber: 222,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].li, {
@@ -430,12 +430,12 @@ function Navigation({ user }) {
                                                                 size: 18
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/Navigation.tsx",
-                                                                lineNumber: 228,
+                                                                lineNumber: 231,
                                                                 columnNumber: 23
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/Navigation.tsx",
-                                                            lineNumber: 227,
+                                                            lineNumber: 230,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -443,36 +443,36 @@ function Navigation({ user }) {
                                                             children: "SIGN OUT"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/Navigation.tsx",
-                                                            lineNumber: 230,
+                                                            lineNumber: 233,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/Navigation.tsx",
-                                                    lineNumber: 220,
+                                                    lineNumber: 223,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/Navigation.tsx",
-                                            lineNumber: 184,
+                                            lineNumber: 187,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Navigation.tsx",
-                                        lineNumber: 182,
+                                        lineNumber: 185,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Navigation.tsx",
-                                lineNumber: 153,
+                                lineNumber: 156,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Navigation.tsx",
-                        lineNumber: 107,
+                        lineNumber: 110,
                         columnNumber: 9
                     }, this)
                 ]
@@ -510,7 +510,7 @@ function Navigation({ user }) {
                                 children: label
                             }, href, false, {
                                 fileName: "[project]/src/components/Navigation.tsx",
-                                lineNumber: 249,
+                                lineNumber: 252,
                                 columnNumber: 15
                             }, this)),
                         auth.isLoggedIn && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -520,7 +520,7 @@ function Navigation({ user }) {
                             children: "My List"
                         }, void 0, false, {
                             fileName: "[project]/src/components/Navigation.tsx",
-                            lineNumber: 259,
+                            lineNumber: 262,
                             columnNumber: 15
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -539,41 +539,41 @@ function Navigation({ user }) {
                                             clipRule: "evenodd"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Navigation.tsx",
-                                            lineNumber: 275,
+                                            lineNumber: 278,
                                             columnNumber: 19
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Navigation.tsx",
-                                        lineNumber: 269,
+                                        lineNumber: 272,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         children: "Search"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Navigation.tsx",
-                                        lineNumber: 281,
+                                        lineNumber: 284,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/Navigation.tsx",
-                                lineNumber: 268,
+                                lineNumber: 271,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/Navigation.tsx",
-                            lineNumber: 267,
+                            lineNumber: 270,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/Navigation.tsx",
-                    lineNumber: 242,
+                    lineNumber: 245,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/Navigation.tsx",
-                lineNumber: 241,
+                lineNumber: 244,
                 columnNumber: 9
             }, this)
         ]
