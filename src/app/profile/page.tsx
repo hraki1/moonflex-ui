@@ -32,7 +32,7 @@ export default function AccountProfile() {
     password: "••••••••",
   });
 
-  const [paymentMethods, setPaymentMethods] = useState<PaymentMethod[]>([
+  const [paymentMethods] = useState<PaymentMethod[]>([
     {
       id: "1",
       type: "card",
@@ -81,7 +81,7 @@ export default function AccountProfile() {
     },
   ];
 
-  const [currentPlan, setCurrentPlan] = useState<SubscriptionPlan>(plans[1]);
+  const [currentPlan] = useState<SubscriptionPlan>(plans[1]);
 
   const handleProfileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
