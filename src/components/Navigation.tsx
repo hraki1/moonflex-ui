@@ -272,7 +272,7 @@ export default function Navigation({ user }: Props) {
                 My List
               </Link>
             )}
-            <div className="pt-4 border-t border-gray-700">
+            <div className="pt-4 border-t border-gray-700">http://localhost:3000/film/552
               <Link
                 href={"/search"}
                 className="flex items-center space-x-2 text-white hover:text-gray-300"
