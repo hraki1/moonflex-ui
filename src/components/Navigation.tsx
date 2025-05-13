@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { RootState } from "@/store/store";
-import { ChevronUp, FileUp, Heart, LogOut, User } from "lucide-react";
+import { ChevronUp, LogOut, User } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { authActions } from "@/store/slices/authSlice";
@@ -109,7 +109,11 @@ export default function Navigation({ user }: Props) {
 
         {/* Right side - Search and Profile */}
         <div className="flex items-center space-x-4">
-          <button className="hidden md:block text-white hover:text-gray-300">
+          <Link
+            href={"/search"}
+            className="flex items-center space-x-2 text-white hover:text-gray-300"
+            onClick={() => setMobileMenuOpen(false)}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-7 w-7"
@@ -122,7 +126,7 @@ export default function Navigation({ user }: Props) {
                 clipRule="evenodd"
               />
             </svg>
-          </button>
+          </Link>
 
           <button
             className="md:hidden text-white focus:outline-none"
@@ -199,14 +203,14 @@ export default function Navigation({ user }: Props) {
                       label: "PROFILE",
                       onClick: () => cardProfileLinksHandler("/profile"),
                     },
-                    {
-                      icon: <Heart size={18} />,
-                      label: "FAVORITES",
-                    },
-                    {
-                      icon: <FileUp size={18} />,
-                      label: "PASSWORD UPDATE",
-                    },
+                    // {
+                    //   icon: <Heart size={18} />,
+                    //   label: "FAVORITES",
+                    // },
+                    // {
+                    //   icon: <FileUp size={18} />,
+                    //   label: "PASSWORD UPDATE",
+                    // },
                   ].map(({ icon, label, onClick }) => (
                     <motion.li
                       key={label}
@@ -269,7 +273,11 @@ export default function Navigation({ user }: Props) {
               </Link>
             )}
             <div className="pt-4 border-t border-gray-700">
-              <button className="flex items-center space-x-2 text-white hover:text-gray-300">
+              <Link
+                href={"/search"}
+                className="flex items-center space-x-2 text-white hover:text-gray-300"
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"
@@ -283,7 +291,7 @@ export default function Navigation({ user }: Props) {
                   />
                 </svg>
                 <span>Search</span>
-              </button>
+              </Link>
             </div>
           </div>
         </div>

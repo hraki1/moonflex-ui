@@ -413,7 +413,7 @@ function SearchPage() {
                 children: "ابحث عن الأفلام والمسلسلات"
             }, void 0, false, {
                 fileName: "[project]/src/app/search/page.tsx",
-                lineNumber: 126,
+                lineNumber: 124,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -425,7 +425,7 @@ function SearchPage() {
                 "aria-label": "Search for movies and TV shows"
             }, void 0, false, {
                 fileName: "[project]/src/app/search/page.tsx",
-                lineNumber: 130,
+                lineNumber: 128,
                 columnNumber: 7
             }, this),
             isLoading && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -433,7 +433,7 @@ function SearchPage() {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$UI$2f$LoadingSpinner$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/src/app/search/page.tsx",
-                        lineNumber: 141,
+                        lineNumber: 139,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -441,13 +441,13 @@ function SearchPage() {
                         children: "جاري البحث..."
                     }, void 0, false, {
                         fileName: "[project]/src/app/search/page.tsx",
-                        lineNumber: 142,
+                        lineNumber: 140,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/search/page.tsx",
-                lineNumber: 140,
+                lineNumber: 138,
                 columnNumber: 9
             }, this),
             isError && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -457,12 +457,12 @@ function SearchPage() {
                     children: error instanceof Error ? error.message : "حدث خطأ أثناء البحث"
                 }, void 0, false, {
                     fileName: "[project]/src/app/search/page.tsx",
-                    lineNumber: 148,
+                    lineNumber: 146,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/search/page.tsx",
-                lineNumber: 147,
+                lineNumber: 145,
                 columnNumber: 9
             }, this),
             !isLoading && results.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -472,12 +472,12 @@ function SearchPage() {
                     films: results
                 }, void 0, false, {
                     fileName: "[project]/src/app/search/page.tsx",
-                    lineNumber: 156,
+                    lineNumber: 154,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/search/page.tsx",
-                lineNumber: 155,
+                lineNumber: 153,
                 columnNumber: 9
             }, this),
             !isLoading && debouncedQuery && results.length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -488,7 +488,7 @@ function SearchPage() {
                         children: "لا توجد نتائج للبحث"
                     }, void 0, false, {
                         fileName: "[project]/src/app/search/page.tsx",
-                        lineNumber: 165,
+                        lineNumber: 163,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -496,19 +496,19 @@ function SearchPage() {
                         children: "حاول استخدام كلمات بحث مختلفة"
                     }, void 0, false, {
                         fileName: "[project]/src/app/search/page.tsx",
-                        lineNumber: 166,
+                        lineNumber: 164,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/search/page.tsx",
-                lineNumber: 164,
+                lineNumber: 162,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/search/page.tsx",
-        lineNumber: 125,
+        lineNumber: 123,
         columnNumber: 5
     }, this);
 }

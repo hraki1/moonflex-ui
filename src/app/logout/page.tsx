@@ -22,7 +22,7 @@ export default function LogoutPage() {
   }, [dispatch, router]);
 
   return (
-    <div className="flex justify-center items-center h-[calc(100vh-60px)] text-white">
+    <div className="flex justify-center items-center h-[calc(100vh)] text-white">
       <LoadingSpinner />
     </div>
   );

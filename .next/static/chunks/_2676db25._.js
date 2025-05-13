@@ -85,7 +85,7 @@ const AuthPage = ()=>{
                     user: {
                         name: formState.user?.name ?? "",
                         email: formState.user?.email ?? "",
-                        favoriteFilms: formState.user?.favoriteFilms ?? []
+                        favoriteFilms: (formState.user?.favoriteFilms ?? []).map(Number)
                     }
                 }));
                 router.push("/");
