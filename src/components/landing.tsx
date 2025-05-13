@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function LandingPage() {
   return (
     <div className="relative bg-[url('/images/landingFilm.jpg')] bg-cover bg-top h-[calc(100vh+64px)] w-full text-white">
@@ -16,7 +18,10 @@ export default function LandingPage() {
 
           {/* CTA Buttons */}
           <div className="flex space-x-4 mt-6">
-            <button className=" flex items-center justify-between cursor-pointer bg-white text-black font-semibold px-6 py-3 rounded hover:bg-gray-300 transition">
+            <Link
+              href={"/film/718930"}
+              className=" flex items-center justify-between cursor-pointer bg-white text-black font-semibold px-6 py-3 rounded hover:bg-gray-300 transition"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width={24}
@@ -51,8 +56,11 @@ export default function LandingPage() {
                 </path>
               </svg>
               <p>Play</p>
-            </button>
-            <button className="flex items-center justify-between cursor-pointer bg-white/20 text-white border border-white font-semibold px-6 py-3 rounded hover:bg-white/30 transition">
+            </Link>
+            <Link
+              href={"/film/718930"}
+              className="flex items-center justify-between cursor-pointer bg-white/20 text-white border border-white font-semibold px-6 py-3 rounded hover:bg-white/30 transition"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width={24}
@@ -66,7 +74,7 @@ export default function LandingPage() {
                 ></path>
               </svg>
               <p>More Info</p>
-            </button>
+            </Link>
           </div>
         </div>
       </div>
