@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Ahmad%20Alhraki/Desktop/moonflex/src/app/auth/loading.tsx"],"sourcesContent":["import LoadingSpinner from \"@/components/UI/LoadingSpinner\";\r\n\r\n// app/loading.tsx\r\nexport default function Loading() {\r\n  return (\r\n    <div className=\"flex items-center justify-center h-screen mt-[60PX]\">\r\n      <LoadingSpinner />\r\n    </div>\r\n  );\r\n}\r\n"],"names":[],"mappings":";;;;AAAA;;;AAGe,SAAS;IACtB,qBACE,8OAAC;QAAI,WAAU;kBACb,cAAA,8OAAC,0IAAA,CAAA,UAAc;;;;;;;;;;AAGrB","debugId":null}}]
+}

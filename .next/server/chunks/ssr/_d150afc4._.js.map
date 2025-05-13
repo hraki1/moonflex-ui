@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Ahmad%20Alhraki/Desktop/moonflex/src/app/page.tsx"],"sourcesContent":["// src/app/page.tsx\r\nimport { checkAuth } from \"@/lib/actions/CheckAuth\";\r\nimport HomeClient from \"@/components/\";\r\nimport { redirect } from \"next/navigation\";\r\n\r\nexport default async function HomePage() {\r\n  const { user } = await checkAuth();\r\n\r\n  if (!user) {\r\n    redirect(\"/auth?mode=login\");\r\n  }\r\n\r\n  return <HomeClient user={user} />;\r\n}\r\n"],"names":[],"mappings":"AAAA,mBAAmB;;;;;;;;;;;;;;;AAGnB;AAAA;;;;;AAEe,eAAe;IAC5B,MAAM,EAAE,IAAI,EAAE,GAAG,MAAM;IAEvB,IAAI,CAAC,MAAM;QACT,CAAA,GAAA,qLAAA,CAAA,WAAQ,AAAD,EAAE;IACX;IAEA,qBAAO,8OAAC;QAAW,MAAM;;;;;;AAC3B","debugId":null}}]
+}

@@ -1,67 +1,70 @@
 "use client";
-import { useState, FormEvent } from "react";
-import { NextPage } from "next";
+import { useActionState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect } from "react";
+import { useAppDispatch } from "@/store/hooks";
+import { authActions } from "@/store/slices/authSlice";
 
-type AuthMode = "login" | "signup";
+import { signupAction } from "@/lib/actions/SignupAction";
+import { loginAction } from "@/lib/actions/LoginAction";
 
-const AuthPage: NextPage = () => {
-  const [mode, setMode] = useState<AuthMode>("login");
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const [name, setName] = useState<string>("");
-  const [error, setError] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+const AuthPage = () => {
+  const dispatch = useAppDispatch();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const mode = searchParams.get("mode");
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-    setError(null);
+  const actionForm = mode === "signup" ? signupAction : loginAction;
 
-    try {
-      if (mode === "login") {
-        console.log("Login attempt with:", email, password);
-        // Add your login logic here
-        await new Promise((resolve) => setTimeout(resolve, 1000));
-      } else {
-        console.log("Signup attempt with:", name, email, password);
-        // Add your signup logic here
-        await new Promise((resolve) => setTimeout(resolve, 1000));
-      }
+  const [formState, formAction, isLoading] = useActionState(actionForm, {
+    message: [],
+    user: {
+      name: "",
+      email: "",
+      password: "",
+    },
+    success: false,
+  });
 
-      // On success, redirect to home page
-      // router.push('/');
-    } catch (err) {
-      setError(
-        err instanceof Error
-          ? err.message
-          : mode === "login"
-          ? "Login failed"
-          : "Signup failed"
+  useEffect(() => {
+    if (formState.success) {
+      dispatch(
+        authActions.login({
+          user: {
+            name: formState.user?.name ?? "",
+            email: formState.user?.email ?? "",
+          },
+        })
       );
-    } finally {
-      setIsLoading(false);
+      router.push("/");
     }
-  };
+  }, [dispatch, formState, router]);
 
-  const toggleMode = () => {
-    setMode((prev) => (prev === "login" ? "signup" : "login"));
-    setError(null);
-  };
+  function toggleMode() {
+    if (mode === "signup") {
+      router.push("/auth?mode=login");
+    } else {
+      router.push("/auth?mode=signup");
+    }
+  }
 
   return (
     <div className="relative flex h-screen flex-col bg-black md:mt-[120px] md:items-center md:bg-transparent">
-      {/* Auth Form */}
       <form
-        onSubmit={handleSubmit}
+        action={formAction}
         className="relative mt-24 space-y-6 rounded bg-black/75 py-8 px-6 md:mt-0 md:max-w-md md:px-14"
       >
         <h1 className="text-3xl font-semibold text-white text-center">
-          {mode === "login" ? "Login" : "Create Account"}
+          {mode === "signup" ? "Create Account" : "Sign In"}
         </h1>
 
-        {error && (
+        {formState.message && formState.message.length > 0 && (
           <div className="p-3 bg-red-600 text-white rounded text-sm">
-            {error}
+            <ul>
+              {formState.message.map((ms, index) => (
+                <li key={index}>{ms}</li>
+              ))}
+            </ul>
           </div>
         )}
 
@@ -69,36 +72,37 @@ const AuthPage: NextPage = () => {
           {mode === "signup" && (
             <label className="inline-block w-full">
               <input
+                name="name"
                 type="text"
                 placeholder="Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                defaultValue={formState.user?.name}
                 className="input"
-                required
+                disabled={isLoading}
               />
             </label>
           )}
 
           <label className="inline-block w-full">
             <input
+              name="email"
               type="email"
               placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              defaultValue={formState.user?.email}
               className="input"
               required
+              disabled={isLoading}
             />
           </label>
 
           <label className="inline-block w-full">
             <input
+              name="password"
               type="password"
               placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              defaultValue={formState.user?.password}
               className="input"
               required
-              minLength={4}
+              disabled={isLoading}
             />
           </label>
         </div>
@@ -107,21 +111,26 @@ const AuthPage: NextPage = () => {
           type="submit"
           disabled={isLoading}
           className={`w-full rounded bg-[#e50914] py-3 font-semibold ${
-            isLoading ? "opacity-60" : ""
+            isLoading ? "opacity-60 cursor-not-allowed" : ""
           }`}
         >
           {isLoading
-            ? mode === "login"
-              ? "Signing In..."
-              : "Signing Up..."
-            : mode === "login"
-            ? "Sign In"
-            : "Sign Up"}
+            ? mode === "signup"
+              ? "Signing Up..."
+              : "Signing In..."
+            : mode === "signup"
+            ? "Sign Up"
+            : "Sign In"}
         </button>
 
         <div className="flex justify-between items-center text-[#737373] text-sm">
           <div className="flex items-center">
-            <input type="checkbox" id="remember" className="mr-1" />
+            <input
+              type="checkbox"
+              id="remember"
+              className="mr-1"
+              disabled={isLoading}
+            />
             <label htmlFor="remember">Remember me</label>
           </div>
           <a href="#" className="hover:underline">
@@ -130,26 +139,28 @@ const AuthPage: NextPage = () => {
         </div>
 
         <div className="text-[#737373]">
-          {mode === "login" ? (
-            <>
-              New to Netflix?{" "}
-              <button
-                type="button"
-                onClick={toggleMode}
-                className="text-white hover:underline"
-              >
-                Sign up now
-              </button>
-            </>
-          ) : (
+          {mode === "signup" ? (
             <>
               Already have an account?{" "}
               <button
                 type="button"
                 onClick={toggleMode}
                 className="text-white hover:underline"
+                disabled={isLoading}
               >
                 Sign in now
+              </button>
+            </>
+          ) : (
+            <>
+              New to Netflix?{" "}
+              <button
+                type="button"
+                onClick={toggleMode}
+                className="text-white hover:underline"
+                disabled={isLoading}
+              >
+                Create new account?
               </button>
             </>
           )}
@@ -157,7 +168,7 @@ const AuthPage: NextPage = () => {
 
         <div className="text-[#737373] text-xs">
           <p>
-            This page is protected by Google reCAPTCHA to ensure you&apos;re not
+            This page is protected by Google reCAPTCHA to ensure you&#39;re not
             a bot.{" "}
             <a href="#" className="text-blue-500 hover:underline">
               Learn more.

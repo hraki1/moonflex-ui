@@ -6,6 +6,9 @@ import Navigation from "../components/Navigation";
 import "../styles/globals.css";
 import { League_Spartan } from "next/font/google";
 import { NetflixFooter } from "@/components/Footer";
+import ReduxProvider from "@/providers/redux-provider";
+import { checkAuth } from "@/lib/actions/checkAuthAction";
+// import { checkAuth } from "@/lib/actions/checkAuthAction";
 
 // Load font
 const neuton = League_Spartan({ subsets: ["latin"], weight: "400" });
@@ -17,11 +20,13 @@ export const metadata: Metadata = {
 };
 
 // Root layout component
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const { user } = await checkAuth();
+
   return (
     <html lang="en">
       <head>
@@ -41,10 +46,12 @@ export default function RootLayout({
       <body
         className={`${neuton.className} antialiased select-none duration-300`}
       >
-        <Navigation />
-        <main>{children}</main>
-        <NetflixFooter />
-        <div id="modal-root" />
+        <ReduxProvider>
+          <Navigation user={user ?? undefined} />
+          <main>{children}</main>
+          <NetflixFooter />
+          <div id="modal-root" />
+        </ReduxProvider>
       </body>
     </html>
   );

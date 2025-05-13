@@ -1,23 +1,68 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { useAppDispatch, useAppSelector } from "@/store/hooks";
+import { RootState } from "@/store/store";
+import { ChevronUp, FileUp, Heart, LogOut, User } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useRouter } from "next/navigation";
+import { authActions } from "@/store/slices/authSlice";
 
-export default function Navigation() {
+type Props = {
+  user?: {
+    name: string;
+    email: string;
+  };
+};
+
+export default function Navigation({ user }: Props) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showProfileCard, setShowProfileCard] = useState(false);
+  const auth = useAppSelector((state: RootState) => state.auth);
+  const dropdownRef = useRef<HTMLUListElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null); // ⬅️ New Ref
+  const dispatch = useAppDispatch();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (user) {
+      dispatch(authActions.login({ user }));
+    }
+  }, [dispatch, user]);
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(e.target as Node)
+      ) {
+        setShowProfileCard(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 10);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  function toggleProfileCard() {
+    setShowProfileCard((prev) => !prev);
+  }
+
+  function cardProfileLinksHandler(path: string) {
+    router.push(path);
+    setShowProfileCard(false);
+  }
 
   return (
     <nav
@@ -25,49 +70,41 @@ export default function Navigation() {
         isScrolled ? "bg-black" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div className="container mx-auto  py-3 flex justify-between items-center">
         {/* Left side - Logo and Desktop Links */}
         <div className="flex items-center space-x-4">
-          {/* Netflix Logo */}
           <Link href="/" className="text-red-600 font-bold text-3xl">
             MoonFlex
           </Link>
-
-          {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-6">
-            <Link href="/" className="text-white hover:text-gray-300 text-xl">
-              Home
-            </Link>
-            <Link
-              href="/tv-shows"
-              className="text-white hover:text-gray-300 text-xl font-medium"
-            >
-              TV Shows
-            </Link>
-            <Link
-              href="/movies"
-              className="text-white hover:text-gray-300 text-xl font-medium"
-            >
-              Movies
-            </Link>
-            <Link
-              href="/new"
-              className="text-white hover:text-gray-300 text-xl font-medium"
-            >
-              New & Popular
-            </Link>
-            <Link
-              href="/my-list"
-              className="text-white hover:text-gray-300 text-xl font-medium"
-            >
-              My List
-            </Link>
+            {[
+              { href: "/", label: "Home" },
+              { href: "/tv-shows", label: "TV Shows" },
+              { href: "/movies", label: "Movies" },
+              { href: "/new-popular", label: "New & Popular" },
+            ].map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                className="text-white hover:text-gray-300 text-xl font-medium"
+              >
+                {label}
+              </Link>
+            ))}
+            {auth.isLoggedIn && (
+              <Link
+                key={"/my-list"}
+                href={"/my-list"}
+                className="text-white hover:text-gray-300 text-xl font-medium"
+              >
+                My List
+              </Link>
+            )}
           </div>
         </div>
 
         {/* Right side - Search and Profile */}
         <div className="flex items-center space-x-4">
-          {/* Search Icon - Hidden on mobile */}
           <button className="hidden md:block text-white hover:text-gray-300">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -83,7 +120,6 @@ export default function Navigation() {
             </svg>
           </button>
 
-          {/* Mobile Menu Button */}
           <button
             className="md:hidden text-white focus:outline-none"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -113,71 +149,121 @@ export default function Navigation() {
             </svg>
           </button>
 
-          {/* Profile */}
+          {/* Profile Dropdown */}
           <div className="relative">
-            <Link
-              href={"/auth"}
-              className=" cursor-pointer flex items-center space-x-1"
-            >
-              <div className="px-3 py-1 rounded bg-red-600 flex items-center justify-center text-white md:mr-5">
-                <span className="text-lg font-medium">Login</span>
-              </div>
-              {/* <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4 text-white hidden md:block"
-                viewBox="0 0 20 20"
-                fill="currentColor"
+            {auth.isLoggedIn ? (
+              <button
+                ref={buttonRef}
+                onClick={toggleProfileCard}
+                className="cursor-pointer flex items-center space-x-1"
               >
-                <path
-                  fillRule="evenodd"
-                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg> */}
-            </Link>
+                <div className="relative px-3 py-1 rounded bg-red-600 text-white flex items-center md:mr-5">
+                  <span className="flex gap-1 text-lg font-medium items-center">
+                    <motion.div
+                      animate={{ rotate: showProfileCard ? 360 : 180 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <ChevronUp />
+                    </motion.div>
+                    {auth.user?.name.split(" ")[0]}
+                  </span>
+                </div>
+              </button>
+            ) : (
+              <Link
+                href="/auth?mode=login"
+                className="px-3 py-2 rounded bg-red-600 text-white md:mr-5 text-lg font-medium"
+              >
+                Login
+              </Link>
+            )}
+
+            {/* Dropdown */}
+            <AnimatePresence>
+              {showProfileCard && (
+                <motion.ul
+                  ref={dropdownRef}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.15 }}
+                  className="absolute w-56 top-full mt-3 right-0 bg-[rgba(0,0,0,0.9)] border border-gray-700 shadow-lg z-50"
+                >
+                  {[
+                    {
+                      icon: <User size={18} />,
+                      label: "PROFILE",
+                      onClick: () => cardProfileLinksHandler("/profile"),
+                    },
+                    {
+                      icon: <Heart size={18} />,
+                      label: "FAVORITES",
+                    },
+                    {
+                      icon: <FileUp size={18} />,
+                      label: "PASSWORD UPDATE",
+                    },
+                  ].map(({ icon, label, onClick }) => (
+                    <motion.li
+                      key={label}
+                      whileHover={{
+                        backgroundColor: "rgba(255,255,255,0.1)",
+                      }}
+                      onClick={onClick}
+                      className="px-4 py-3 flex items-center gap-3 text-sm text-gray-200 cursor-pointer"
+                    >
+                      <span className="text-gray-400">{icon}</span>
+                      <span className="font-medium">{label}</span>
+                    </motion.li>
+                  ))}
+                  <div className="border-t border-gray-700 mx-2" />
+                  <motion.li
+                    whileHover={{
+                      backgroundColor: "rgba(255,255,255,0.1)",
+                    }}
+                    onClick={() => cardProfileLinksHandler("/logout")}
+                    className="px-4 py-3 flex items-center gap-3 text-sm text-gray-200 cursor-pointer"
+                  >
+                    <span className="text-gray-400">
+                      <LogOut size={18} />
+                    </span>
+                    <span className="font-medium">SIGN OUT</span>
+                  </motion.li>
+                </motion.ul>
+              )}
+            </AnimatePresence>
           </div>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-black/70 bg-opacity-90 absolute top-16 left-0 right-0 py-4 px-4">
+        <div className="md:hidden bg-black/70 absolute top-16 left-0 right-0 py-4 px-4">
           <div className="flex flex-col space-y-4">
-            <Link
-              href="/"
-              className="text-white hover:text-gray-300 text-lg"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              href="/tv-shows"
-              className="text-white hover:text-gray-300 text-lg"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              TV Shows
-            </Link>
-            <Link
-              href="/movies"
-              className="text-white hover:text-gray-300 text-lg"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Movies
-            </Link>
-            <Link
-              href="/new-popular"
-              className="text-white hover:text-gray-300 text-lg"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              New & Popular
-            </Link>
-            <Link
-              href="/my-list"
-              className="text-white hover:text-gray-300 text-lg"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              My List
-            </Link>
+            {[
+              { href: "/", label: "Home" },
+              { href: "/tv-shows", label: "TV Shows" },
+              { href: "/movies", label: "Movies" },
+              { href: "/new-popular", label: "New & Popular" },
+            ].map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                className="text-white hover:text-gray-300 text-lg"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {label}
+              </Link>
+            ))}
+            {auth.isLoggedIn && (
+              <Link
+                href={"/my-list"}
+                className="text-white hover:text-gray-300 text-lg"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                My List
+              </Link>
+            )}
             <div className="pt-4 border-t border-gray-700">
               <button className="flex items-center space-x-2 text-white hover:text-gray-300">
                 <svg

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Ahmad%20Alhraki/Desktop/moonflex/src/app/logout/page.tsx"],"sourcesContent":["\"use client\";\r\n\r\nimport { useEffect } from \"react\";\r\nimport { useRouter } from \"next/navigation\";\r\n\r\nexport default function LogoutPage() {\r\n  const router = useRouter();\r\n\r\n  useEffect(() => {\r\n    // حذف التوكن من الكوكيز مش من localStorage (لأنك تستخدم cookies مش localStorage)\r\n    document.cookie = \"token=; Max-Age=0; path=/;\"; // حذف التوكن\r\n\r\n    console.log(\"User logged out\");\r\n\r\n    // إعادة توجيه المستخدم لصفحة الدخول\r\n    router.replace(\"/auth\");\r\n  }, [router]);\r\n\r\n  return null; // أو Spinner صغير لو تحب\r\n}\r\n"],"names":[],"mappings":";;;AAEA;AACA;AAHA;;;AAKe,SAAS;IACtB,MAAM,SAAS,CAAA,GAAA,kIAAA,CAAA,YAAS,AAAD;IAEvB,CAAA,GAAA,qMAAA,CAAA,YAAS,AAAD,EAAE;QACR,iFAAiF;QACjF,SAAS,MAAM,GAAG,8BAA8B,aAAa;QAE7D,QAAQ,GAAG,CAAC;QAEZ,oCAAoC;QACpC,OAAO,OAAO,CAAC;IACjB,GAAG;QAAC;KAAO;IAEX,OAAO,MAAM,yBAAyB;AACxC","debugId":null}}]
+}
